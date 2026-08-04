@@ -713,10 +713,13 @@ section { padding: 3rem 0; }
   text-align: center;
 }
 
+/* MN Stat. 211B.04 subd. 5(b) (Laws 2026 ch. 101): a website disclaimer "must be
+   clearly legible without manual adjustment or magnification by the user." The
+   previous 0.8rem at 70% opacity on navy was borderline — do not dim it again. */
 .site-footer .disclaimer {
   margin-top: 0.75rem;
-  font-size: 0.8rem;
-  opacity: 0.7;
+  font-size: 0.95rem;
+  color: #ffffff;
 }
 
 .site-footer a {
