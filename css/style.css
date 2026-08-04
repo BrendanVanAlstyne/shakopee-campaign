@@ -366,6 +366,37 @@ section { padding: 3rem 0; }
 .badge-audio { background: #e4f6fd; color: #0b6e93; }
 .badge-transcript { background: #e9edf8; color: #33427a; }
 
+/* Sample-story marking. Deliberately loud: these two entries are format
+   demonstrations, not neighbors' testimony, and a visitor must not be able to
+   mistake one for the other at a glance. Delete .example-banner, the
+   .badge-example badges, and the .story-example class together when real
+   recorded stories replace the samples. */
+.badge-example { background: #b3541e; color: #fff; }
+
+.example-banner {
+  background: #fdf3e3;
+  border: 2px dashed #b3541e;
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+  margin: 1.25rem 0 1.5rem;
+  color: #6d3411;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.example-banner strong {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.88rem;
+  margin-bottom: 0.3rem;
+}
+
+.story-example {
+  border: 2px dashed #d9b48f;
+  background: #fffdf9;
+}
+
 /* long badge text (e.g. Russian) may wrap on phones instead of overflowing */
 @media (max-width: 480px) {
   .badge { white-space: normal; }
