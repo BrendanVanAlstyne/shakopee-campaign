@@ -325,9 +325,11 @@ section { padding: 3rem 0; }
   color: var(--navy);
 }
 
+/* No max-width: the 800px cap left this paragraph stranded on the left with a
+   360px gap, because the heading and the story cards beside it run the full
+   1200px wrap. Matching their width is what makes the column read as aligned. */
 .section-sub {
   color: var(--ink-soft);
-  max-width: 800px;
   margin: 0 0 2rem;
 }
 
@@ -385,13 +387,12 @@ section { padding: 3rem 0; }
   line-height: 1.6;
 }
 
+/* Inline "Name: " label, so the colon and space read as part of the line the
+   way a printed transcript does. The colon lives in the HTML rather than in a
+   ::after, so it survives copy-paste. */
 .t-who {
-  display: block;
+  display: inline;
   font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  margin-bottom: 0.2rem;
 }
 
 .t-wisco .t-who { color: var(--royal); }
@@ -401,6 +402,19 @@ section { padding: 3rem 0; }
 
 /* Continuation paragraphs in the same speaker's turn: indented, no new label. */
 .t-cont { margin-left: 0; }
+
+/* "Before the interview" / "The interview" dividers inside the transcript. */
+.t-part {
+  margin: 1.6rem 0 0.9rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 0.35rem;
+}
+
+.t-part:first-child { margin-top: 0.25rem; }
 
 .transcript-details > summary { cursor: pointer; font-weight: 700; }
 
