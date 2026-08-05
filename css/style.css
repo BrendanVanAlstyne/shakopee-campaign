@@ -703,6 +703,22 @@ section { padding: 3rem 0; }
 .page-ali .priorities li { border-left: 5px solid var(--cyan); }
 .page-brendan .priorities li { border-left: 5px solid var(--royal); }
 
+/* A specific commitment nested under a broader plank. Tinted and inset so it
+   reads as part of the parent plank rather than as a fourth top-level priority.
+   The border-left override has to come after the .page-* rules above. */
+.sub-priorities { list-style: none; padding: 0; margin: 0.85rem 0 0; }
+
+.page-brendan .sub-priorities li,
+.page-ali .sub-priorities li {
+  background: var(--cream, #faf7f0);
+  border: 1px dashed var(--card-border);
+  border-left: 3px solid var(--gold);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin: 0;
+  font-size: 0.95em;
+}
+
 /* ---------- Footer ---------- */
 
 .site-footer {
