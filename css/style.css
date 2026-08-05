@@ -703,20 +703,86 @@ section { padding: 3rem 0; }
 .page-ali .priorities li { border-left: 5px solid var(--cyan); }
 .page-brendan .priorities li { border-left: 5px solid var(--royal); }
 
-/* A specific commitment nested under a broader plank. Tinted and inset so it
-   reads as part of the parent plank rather than as a fourth top-level priority.
-   The border-left override has to come after the .page-* rules above. */
+/* A specific commitment nested under a broader plank, presented as a collapsed
+   disclosure: the headline reads as a button, the detail opens on hover (see
+   js/site.js) or on click. The markup is a real <details>, so click and keyboard
+   work with no JS. */
 .sub-priorities { list-style: none; padding: 0; margin: 0.85rem 0 0; }
 
-.page-brendan .sub-priorities li,
-.page-ali .sub-priorities li {
-  background: var(--cream, #faf7f0);
-  border: 1px dashed var(--card-border);
-  border-left: 3px solid var(--gold);
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
+.page-brendan .sub-priorities > li,
+.page-ali .sub-priorities > li {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
   margin: 0;
-  font-size: 0.95em;
+}
+
+.disclosure {
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  background: var(--cream, #faf7f0);
+  transition: border-radius 0.2s ease, background 0.2s ease;
+}
+
+.disclosure[open] {
+  border-radius: 12px;
+  background: #fffdf8;
+}
+
+.disclosure > summary {
+  list-style: none;              /* Firefox marker */
+  cursor: pointer;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: inherit;
+}
+
+.disclosure > summary::-webkit-details-marker { display: none; }
+
+.disclosure > summary::after {
+  content: "+";
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--gold-ink, #8a6100);
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.disclosure[open] > summary::after { content: "\2212"; }  /* minus */
+
+.disclosure > summary:focus-visible {
+  outline: 3px solid var(--royal);
+  outline-offset: 2px;
+}
+
+.disclosure .disclosure-body {
+  padding: 0 1.1rem 0.9rem;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ---------- Scroll-reveal for statement boxes ----------
+   The hidden start state is gated behind .js-reveal, which js/site.js adds only
+   when it can actually observe and reveal. No JS, no IntersectionObserver, or a
+   reduced-motion preference => this block never applies and content is visible. */
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  will-change: opacity, transform;
+}
+
+.js-reveal .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.5s ease, transform 0.55s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal .reveal { opacity: 1; transform: none; transition: none; }
 }
 
 /* ---------- Footer ---------- */
