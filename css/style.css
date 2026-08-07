@@ -104,8 +104,10 @@ a { color: var(--royal); }
 
 .site-nav a.active { background: rgba(255, 255, 255, 0.18); }
 
-.site-nav a.nav-gold { color: var(--white); } /* de-golded — kept class for markup stability */
-.site-nav a.nav-cyan { color: var(--cyan); }
+/* Both candidate links carry the campaign gold — the ticket reads as one.
+   Class names stay nav-gold/nav-cyan for markup stability across 15 pages. */
+.site-nav a.nav-gold,
+.site-nav a.nav-cyan { color: var(--gold); }
 
 .nav-group {
   display: flex;
