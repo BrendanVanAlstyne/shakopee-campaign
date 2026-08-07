@@ -368,6 +368,16 @@ section { padding: 3rem 0; }
 .badge-audio { background: #e4f6fd; color: #0b6e93; }
 .badge-transcript { background: #e9edf8; color: #33427a; }
 
+/* Runtime chip. The <audio> element only reveals its duration once metadata
+   loads, and mobile Safari often defers that until first play — so the length
+   is also stated up front, before anyone commits to pressing play. */
+.badge-duration {
+  background: #eef0f4;
+  color: #4a5568;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
 /* ---------- Story carousel ----------
    A plain overflow-x scroller with scroll-snap: swipe and trackpad scrolling
    work with no JS, and every story stays reachable if the script never loads.
