@@ -654,7 +654,9 @@ section { padding: 3rem 0; }
 .how-it-works h3 {
   margin: 0 0 0.75rem;
   font-size: 1.05rem;
-  color: var(--cyan);
+  /* white, not cyan: cyan on the royal band is ~3.5:1 — below AA, and worse
+     for color-blind readers. Matches .share-band .section-title above it. */
+  color: var(--white);
 }
 
 .how-it-works ol {
