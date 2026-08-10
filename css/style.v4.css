@@ -1,0 +1,1061 @@
+/* ============================================================
+   Van Alstyne & Verney for Shakopee City Council
+   Shared stylesheet — palette drawn from the business card:
+     navy + white + cyan  (Ali)
+     gold + royal blue    (Brendan)
+   ============================================================ */
+
+:root {
+  --navy: #1b2660;
+  --navy-deep: #131b47;
+  --royal: #2743b8;
+  --gold: #f5b932;
+  --gold-soft: #fbd97e;
+  --cyan: #35c4f0;
+  --cream: #faf7f0;
+  --ink: #1c2233;
+  --ink-soft: #4a5068;
+  --white: #ffffff;
+  --card-border: #e6e1d4;
+  --max-width: 1200px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+/* body copy scales fluidly between phone and desktop */
+main { font-size: clamp(1rem, 0.94rem + 0.3vw, 1.15rem); }
+
+a { color: var(--royal); }
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- Header / nav ---------- */
+
+.site-header {
+  background: var(--navy);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 10px rgba(19, 27, 71, 0.35);
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  flex-wrap: wrap; /* nav drops below the brand on narrow screens instead of overflowing */
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  flex-shrink: 0; /* never squeeze the brand — the nav side wraps instead */
+}
+
+.brand svg { width: 30px; height: 30px; flex-shrink: 0; }
+
+.brand .brand-sub {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 400;
+  opacity: 0.85;
+  letter-spacing: 0.05em;
+  white-space: nowrap; /* long translations (SO/VI/ES) must not wrap to a 2nd line */
+}
+
+.site-nav { display: flex; gap: 0.15rem; flex-wrap: wrap; }
+
+.site-nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.site-nav a:hover { background: rgba(255, 255, 255, 0.12); }
+
+.site-nav a.active { background: rgba(255, 255, 255, 0.18); }
+
+/* Both candidate links carry the campaign gold — the ticket reads as one.
+   Class names stay nav-gold/nav-cyan for markup stability across 15 pages. */
+.site-nav a.nav-gold,
+.site-nav a.nav-cyan { color: var(--gold); }
+
+.nav-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  flex-wrap: wrap;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  padding-left: 0.6rem;
+}
+
+/* Somali brand sub-line is the widest — one notch smaller keeps the
+   whole header on one row */
+:lang(so) .brand-sub { font-size: 0.68rem; }
+
+/* Non-English nav labels run long — tighten them so the header
+   stays on one row at desktop widths (RU/SO are the longest and get
+   one extra notch) */
+:lang(es) .site-nav a,
+:lang(vi) .site-nav a {
+  font-size: 0.85rem;
+  padding: 0.45rem 0.5rem;
+}
+
+:lang(ru) .site-nav a,
+:lang(so) .site-nav a {
+  font-size: 0.82rem;
+  padding: 0.45rem 0.42rem;
+}
+
+/* Native-script language names are wider than the old two-letter codes —
+   the switcher runs tight globally (see .lang-switch a above), and on
+   translated pages (long nav labels + long brand sub-lines) the header
+   row tightens a further notch so it stays one row down to the 1024px
+   desktop breakpoint */
+:lang(es) .nav-group,
+:lang(vi) .nav-group,
+:lang(ru) .nav-group,
+:lang(so) .nav-group { gap: 0.45rem; }
+
+:lang(es) .lang-switch,
+:lang(vi) .lang-switch,
+:lang(ru) .lang-switch,
+:lang(so) .lang-switch { padding-left: 0.45rem; gap: 0.05rem; }
+
+/* Desktop: the nav highlight is a folder tab — square bottom, flush with
+   the header's bottom edge. The scroll-spy moves .active across
+   Stories / Share / Vote as their sections scroll into view.
+   (Placed after the :lang nav rules and selectors carry matching
+   specificity so the tab geometry wins the cascade.) */
+@media (min-width: 1024px) {
+  .site-header .wrap { align-items: stretch; }
+  .site-header .nav-group { align-items: stretch; }
+  .site-header .site-nav a {
+    display: flex;
+    align-items: center;
+    margin-bottom: -0.6rem; /* bleed through the header's bottom padding */
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 6px 6px 0 0;
+  }
+  .site-header .lang-switch { align-self: center; }
+}
+
+.lang-switch a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0;
+  padding: 0.25rem 0.2rem;
+  border-radius: 5px;
+}
+
+.lang-switch a:hover { background: rgba(255, 255, 255, 0.12); color: var(--white); }
+
+.lang-switch a.lang-current {
+  background: var(--white);
+  color: var(--navy);
+}
+
+/* ---------- Hero blocks ---------- */
+
+.hero {
+  padding: 3.5rem 0 3rem;
+  text-align: center;
+}
+
+.hero-landing {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.hero-landing .star { width: 64px; height: 64px; margin: 0 auto 1rem; }
+
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.9rem, 5vw, 3rem);
+  line-height: 1.15;
+}
+
+.hero .kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  opacity: 0.85;
+}
+
+.hero .lede {
+  max-width: 760px;
+  margin: 0.75rem auto 0;
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+  opacity: 0.92;
+}
+
+.hero-landing .lede a { color: var(--cyan); }
+
+/* Candidate page heroes */
+
+.hero-ali {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.hero-ali .slogan { color: var(--cyan); }
+
+.hero-brendan {
+  background: var(--royal);
+  color: var(--white);
+}
+
+.hero-brendan .slogan {
+  display: inline-block;
+  background: var(--white);
+  color: var(--royal);
+  padding: 0.5rem 1.5rem;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 50%, 100% 100%, 0 100%, 14px 50%);
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.hero .slogan {
+  font-size: clamp(1.15rem, 3vw, 1.6rem);
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.hero .for-line { font-size: 1.05rem; font-weight: 600; opacity: 0.9; }
+
+/* ---------- Contact band ----------
+   Sits directly under the hero on each bio page, so a voter who clicks a
+   candidate's name sees how to reach them before anything else. Deliberately
+   not a <section> (that carries 3rem of padding) — this hugs the hero. */
+
+.contact-band {
+  background: var(--white);
+  border-bottom: 1px solid var(--card-border);
+  padding: 1.75rem 0 2rem;
+  text-align: center;
+}
+
+.contact-band .section-title { margin-bottom: 0.35rem; }
+
+.contact-band-lede {
+  color: var(--ink-soft);
+  margin: 0 auto;
+  max-width: 620px;
+}
+
+.contact-methods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 1.2rem;
+}
+
+.contact-method {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 280px;
+  background: var(--cream);
+  border: 1px solid var(--card-border);
+  border-left: 5px solid var(--gold);
+  border-radius: 10px;
+  padding: 0.8rem 1.25rem;
+  text-align: left;
+  text-decoration: none;
+  color: var(--navy);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.page-ali .contact-method { border-left-color: var(--cyan); }
+.page-brendan .contact-method { border-left-color: var(--royal); }
+
+.contact-method:hover {
+  border-color: var(--royal);
+  box-shadow: 0 4px 12px rgba(19, 27, 71, 0.12);
+}
+
+.page-ali .contact-method:hover { border-left-color: var(--cyan); }
+.page-brendan .contact-method:hover { border-left-color: var(--royal); }
+
+.contact-method:focus-visible {
+  outline: 3px solid var(--royal);
+  outline-offset: 2px;
+}
+
+.contact-method svg {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  color: var(--ink-soft);
+}
+
+.contact-method-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;               /* lets the address wrap instead of overflowing */
+}
+
+.contact-method-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--ink-soft);
+}
+
+.contact-method-value {
+  font-weight: 700;
+  font-size: 1.05rem;
+  overflow-wrap: anywhere;    /* the email address is longer than a phone screen */
+}
+
+@media (max-width: 560px) {
+  .contact-method { min-width: 0; width: 100%; }
+}
+
+/* The Volunteer / Yard Sign pair, moved out of the hero so every way to act on
+   the page lives in one block. Reuses .cta-row for the flex/gap; this rule only
+   centres it and rules it off from the contact buttons above. A Donate button
+   joins the row once the committees' PayPal accounts open.
+   Scoped to .contact-band so it outranks .cta-row's own margin — forms.v1.css
+   loads after this file, so a bare .contact-actions would lose the tie. */
+.contact-band .contact-actions {
+  justify-content: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--card-border);
+}
+
+@media (max-width: 560px) {
+  .contact-band .contact-actions .btn,
+  .contact-band .contact-actions .btn-secondary { width: 100%; text-align: center; }
+}
+
+/* ---------- Candidate duo cards on landing ---------- */
+
+.candidates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: -2rem auto 0;
+  position: relative;
+  z-index: 5;
+}
+
+@media (max-width: 640px) {
+  .candidates { grid-template-columns: 1fr; }
+}
+
+.candidate-card {
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(19, 27, 71, 0.18);
+  transition: transform 0.15s ease;
+}
+
+.candidate-card:hover { transform: translateY(-3px); }
+
+.candidate-card h2 { margin: 0 0 0.35rem; font-size: clamp(1.45rem, 1.2rem + 1vw, 1.85rem); }
+
+.candidate-card p { margin: 0; font-size: 0.95rem; }
+
+.candidate-card .cta {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.card-ali {
+  background: var(--royal);
+  color: var(--white);
+}
+
+.card-ali .slogan-mini { color: var(--cyan); font-weight: 700; }
+.card-ali .cta { color: var(--gold-soft); }
+
+.card-brendan {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.card-brendan .slogan-mini { color: var(--cyan); font-weight: 700; }
+.card-brendan .cta { color: var(--gold-soft); }
+
+/* ---------- Sections ---------- */
+
+section { padding: 3rem 0; }
+
+.section-title {
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  margin: 0 0 0.4rem;
+  color: var(--navy);
+}
+
+/* No max-width: the 800px cap left this paragraph stranded on the left with a
+   360px gap, because the heading and the story cards beside it run the full
+   1200px wrap. Matching their width is what makes the column read as aligned. */
+.section-sub {
+  color: var(--ink-soft);
+  margin: 0 0 2rem;
+}
+
+/* ---------- Story cards ---------- */
+
+.story {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-left: 5px solid var(--royal);
+  border-radius: 10px;
+  padding: 1.5rem 1.5rem 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(28, 34, 51, 0.06);
+}
+
+.story-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.story h3 { margin: 0; font-size: clamp(1.6rem, 1.15rem + 1.9vw, 2.35rem); line-height: 1.2; color: var(--navy); }
+
+.badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.badge-audio { background: #e4f6fd; color: #0b6e93; }
+.badge-transcript { background: #e9edf8; color: #33427a; }
+
+/* Runtime chip. The <audio> element only reveals its duration once metadata
+   loads, and mobile Safari often defers that until first play — so the length
+   is also stated up front, before anyone commits to pressing play. */
+.badge-duration {
+  background: #eef0f4;
+  color: #4a5568;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Story carousel ----------
+   A plain overflow-x scroller with scroll-snap: swipe and trackpad scrolling
+   work with no JS, and every story stays reachable if the script never loads.
+   js/site.v2.js only adds the arrow buttons and their disabled state. */
+.story-carousel { position: relative; }
+
+.carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;              /* Firefox */
+  padding-bottom: 0.25rem;
+}
+
+.carousel-track::-webkit-scrollbar { display: none; }
+
+.carousel-track > .story {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  margin: 0;
+}
+
+/* Keyboard users can focus and arrow-scroll the track itself. */
+.carousel-track:focus-visible {
+  outline: 3px solid var(--royal);
+  outline-offset: 4px;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 3.25rem;
+  z-index: 2;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 1px solid var(--card-border);
+  background: var(--white);
+  color: var(--navy);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  display: none;                      /* shown once JS confirms >1 slide */
+}
+
+.carousel-active .carousel-arrow { display: block; }
+.carousel-prev { left: -1.35rem; }
+.carousel-next { right: -1.35rem; }
+
+.carousel-arrow:hover:not(:disabled) { background: var(--cream); }
+.carousel-arrow:disabled { opacity: 0.3; cursor: default; }
+
+.carousel-arrow:focus-visible {
+  outline: 3px solid var(--royal);
+  outline-offset: 2px;
+}
+
+/* On touch/narrow screens the arrows would sit over the content and duplicate
+   a gesture people already have. Swipe is the affordance there. */
+@media (max-width: 720px) {
+  .carousel-active .carousel-arrow { display: none; }
+  .carousel-track > .story { flex-basis: 92%; }
+}
+
+/* ---------- Published transcript ----------
+   A long two-speaker interview. Speaker turns are colour-coded and the
+   storyteller's turns carry the visual weight; the interviewer's questions
+   recede so the testimony reads as the main text. */
+/* No max-height / inner scroller here on purpose: this is a 28-minute
+   interview, and capping it would trap ~30 screens of testimony inside a small
+   scrollbox. The <details> already keeps it collapsed until asked for, so let
+   it flow and let the page scroll normally. */
+.transcript {
+  margin-top: 0.75rem;
+  border-left: 3px solid var(--card-border);
+  padding-left: 1rem;
+}
+
+.t-line {
+  margin: 0 0 0.85rem;
+  line-height: 1.6;
+}
+
+/* Inline "Name: " label, so the colon and space read as part of the line the
+   way a printed transcript does. The colon lives in the HTML rather than in a
+   ::after, so it survives copy-paste. */
+.t-who {
+  display: inline;
+  font-weight: 700;
+}
+
+.t-wisco .t-who { color: var(--royal); }
+.t-brendan .t-who { color: var(--ink-soft); }
+
+.t-brendan { color: var(--ink-soft); }
+
+/* Continuation paragraphs in the same speaker's turn: indented, no new label. */
+.t-cont { margin-left: 0; }
+
+/* "Before the interview" / "The interview" dividers inside the transcript. */
+.t-part {
+  margin: 1.6rem 0 0.9rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 0.35rem;
+}
+
+.t-part:first-child { margin-top: 0.25rem; }
+
+.transcript-details > summary { cursor: pointer; font-weight: 700; }
+
+/* long badge text (e.g. Russian) may wrap on phones instead of overflowing */
+@media (max-width: 480px) {
+  .badge { white-space: normal; }
+}
+
+.story .teller {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin: 0 0 0.75rem;
+}
+
+.story audio { width: 100%; margin: 0.5rem 0 0.75rem; }
+
+.story blockquote {
+  margin: 0.5rem 0 0.75rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--card-border);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* Optional story photo — content left, photo right; stacks on phones */
+.story-has-photo {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+@media (max-width: 640px) {
+  .story-has-photo { grid-template-columns: 1fr; }
+}
+
+.story-photo { margin: 0; }
+
+.story-photo img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+}
+
+.story-photo figcaption {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 0.4rem;
+}
+
+.story details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--royal);
+  font-size: 0.95rem;
+}
+
+.story details[open] summary { margin-bottom: 0.5rem; }
+
+.placeholder-note {
+  background: #f7f5ef;
+  border: 1px dashed #c9c4b6;
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.85rem;
+  color: #6b6656;
+  margin: 0.5rem 0;
+}
+
+/* ---------- Share your story ---------- */
+
+.share-band {
+  background: var(--royal);
+  color: var(--white);
+  text-align: center;
+}
+
+.share-band .section-title { color: var(--white); }
+
+.share-band p { max-width: 760px; margin: 0.5rem auto; }
+
+.share-band .privacy-note {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.btn:hover { background: var(--gold-soft); }
+
+/* ---------- Share Your Story: contact options + steps ---------- */
+
+.contact-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 560px;
+  margin: 1.5rem auto 0;
+}
+
+@media (max-width: 560px) {
+  .contact-options { grid-template-columns: 1fr; }
+}
+
+.contact-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  text-decoration: none;
+  color: var(--white);
+  min-width: 0;
+}
+
+.contact-value { overflow-wrap: anywhere; } /* long values may break if they must */
+
+/* The email address must stay on ONE line */
+.contact-option[href^="mailto"] .contact-value {
+  font-size: 1.025rem; /* 0.9rem + 2px */
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
+.contact-option:hover .contact-value { text-decoration: underline; text-underline-offset: 3px; }
+
+.contact-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cyan);
+}
+
+.contact-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.how-it-works {
+  max-width: 760px;
+  margin: 2.25rem auto 0;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+}
+
+.how-it-works h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+  /* white, not cyan: cyan on the royal band is ~3.5:1 — below AA, and worse
+     for color-blind readers. Matches .share-band .section-title above it. */
+  color: var(--white);
+}
+
+.how-it-works ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.how-it-works li {
+  margin-bottom: 0.6rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.how-it-works li:last-child { margin-bottom: 0; }
+
+/* ---------- Find your polling place ---------- */
+
+.vote-cta {
+  margin: 1.25rem 0 0;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.vote-cta .btn { margin-top: 0; }
+
+.vote-tool-note { font-size: 0.85rem; color: var(--ink-soft); }
+
+.vote-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+@media (max-width: 760px) {
+  .vote-cards { grid-template-columns: 1fr; }
+}
+
+.vote-card {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(28, 34, 51, 0.06);
+}
+
+.vote-card h3 { margin: 0 0 0.4rem; font-size: 1.02rem; color: var(--navy); }
+
+/* each card leads with a button to its official resource */
+.vote-card-btn {
+  display: block;
+  background: var(--navy);
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  margin: 0 0 0.8rem;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.vote-card-btn h3 { margin: 0; color: var(--white); }
+
+.vote-card-btn:hover { background: var(--royal); }
+.vote-card p { margin: 0; font-size: 0.92rem; color: var(--ink-soft); }
+
+/* Date + location pairs in the "Vote Early" card */
+.vote-when {
+  list-style: none;
+  margin: 0 0 0.7rem;
+  padding: 0;
+}
+
+.vote-when li + li { margin-top: 0.6rem; }
+
+.vote-when .vw-what {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.vote-when .vw-where {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+/* Addresses link out to a map — keep the tap target generous on phones */
+.map-link {
+  color: var(--royal);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  display: inline-block;
+  padding: 0.15rem 0;
+}
+
+.map-link:hover { color: var(--navy); }
+
+.vote-hours { font-size: 0.85rem; }
+
+.vc-gold { border-top: 4px solid var(--navy); }
+.vc-cyan { border-top: 4px solid var(--cyan); }
+.vc-royal { border-top: 4px solid var(--royal); }
+
+/* ---------- Candidate page content ---------- */
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 700px) {
+  .profile-grid { grid-template-columns: 1fr; }
+}
+
+.headshot {
+  background: linear-gradient(160deg, #d8d4c8, #c2beb2);
+  border-radius: 12px;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6d6a5e;
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(19, 27, 71, 0.15);
+}
+
+.priorities { list-style: none; padding: 0; margin: 1rem 0 0; }
+
+.priorities li {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.priorities strong { color: var(--navy); }
+
+.page-ali .priorities li { border-left: 5px solid var(--cyan); }
+.page-brendan .priorities li { border-left: 5px solid var(--royal); }
+
+/* A specific commitment nested under a broader plank, presented as a collapsed
+   disclosure: the headline reads as a button, the detail opens on hover (see
+   js/site.js) or on click. The markup is a real <details>, so click and keyboard
+   work with no JS. */
+.sub-priorities { list-style: none; padding: 0; margin: 0.85rem 0 0; }
+
+.page-brendan .sub-priorities > li,
+.page-ali .sub-priorities > li {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.disclosure {
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  background: var(--cream, #faf7f0);
+  transition: border-radius 0.2s ease, background 0.2s ease;
+}
+
+.disclosure[open] {
+  border-radius: 12px;
+  background: #fffdf8;
+}
+
+.disclosure > summary {
+  list-style: none;              /* Firefox marker */
+  cursor: pointer;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: inherit;
+}
+
+.disclosure > summary::-webkit-details-marker { display: none; }
+
+.disclosure > summary::after {
+  content: "+";
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--gold-ink, #8a6100);
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.disclosure[open] > summary::after { content: "\2212"; }  /* minus */
+
+.disclosure > summary:focus-visible {
+  outline: 3px solid var(--royal);
+  outline-offset: 2px;
+}
+
+.disclosure .disclosure-body {
+  padding: 0 1.1rem 0.9rem;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ---------- Donate sections (embedded on each bio page) ---------- */
+
+/* PayPal button not yet live: rendered as a non-link so nothing looks
+   clickable that isn't. Swap for a real .btn anchor when each committee's
+   account opens (see the ACTIVATE comments in ali.html / brendan.html). */
+.btn-pending {
+  background: var(--cream);
+  color: var(--ink-soft);
+  border: 1px dashed #c9c4b6;
+  cursor: default;
+}
+
+.btn-pending:hover { background: var(--cream); }
+
+/* Donor-rules disclosure sits below the placeholder note; the pill needs a
+   little air, and its bullet cards read against the disclosure's open bg. */
+.donate-disclosure { margin-top: 1rem; }
+
+.donate-rules { list-style: none; padding: 0; margin: 0.75rem 0 0.25rem; }
+
+.donate-rules li {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-left: 5px solid var(--gold);
+  border-radius: 10px;
+  padding: 0.85rem 1.1rem;
+  margin-bottom: 0.65rem;
+}
+
+.donate-rules strong { color: var(--navy); }
+
+/* ---------- Scroll-reveal for statement boxes ----------
+   The hidden start state is gated behind .js-reveal, which js/site.js adds only
+   when it can actually observe and reveal. No JS, no IntersectionObserver, or a
+   reduced-motion preference => this block never applies and content is visible. */
+.js-reveal .reveal {
+  opacity: 0;
+  /* Slides in along the card's coloured left edge rather than just fading —
+     a bare opacity fade read as "already there". */
+  transform: translate3d(-38px, 14px, 0) scale(0.985);
+  will-change: opacity, transform;
+}
+
+.js-reveal .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  /* Slight overshoot on the easing so items settle rather than stop dead. */
+  transition:
+    opacity 0.45s ease-out,
+    transform 0.62s cubic-bezier(0.16, 0.9, 0.28, 1.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--navy-deep);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 3rem 0;
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.2rem);
+  text-align: center;
+}
+
+/* MN Stat. 211B.04 subd. 5(b) (Laws 2026 ch. 101): a website disclaimer "must be
+   clearly legible without manual adjustment or magnification by the user." The
+   previous 0.8rem at 70% opacity on navy was borderline — do not dim it again. */
+.site-footer .disclaimer {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.site-footer a {
+  color: var(--cyan);
+  font-size: clamp(1.25rem, 1.1rem + 0.9vw, 1.7rem);
+  font-weight: 700;
+  display: inline-block;
+  margin: 0.35rem 1rem;
+}
