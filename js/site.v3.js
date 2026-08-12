@@ -35,8 +35,16 @@
         });
         var summary = d.querySelector('summary');
         if (summary) {
-          summary.addEventListener('click', function () {
+          summary.addEventListener('click', function (e) {
             // d.open is still the pre-toggle value at click time.
+            if (d.open && d.dataset.pinned !== 'true') {
+              // Open only because the pointer is over it. The native toggle
+              // would close it, which reads as "clicking dismissed what I was
+              // reading" — so swallow the toggle and pin it open instead.
+              e.preventDefault();
+              d.dataset.pinned = 'true';
+              return;
+            }
             d.dataset.pinned = d.open ? 'false' : 'true';
           });
         }

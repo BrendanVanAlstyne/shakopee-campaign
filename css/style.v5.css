@@ -492,7 +492,7 @@ section { padding: 3rem 0; }
 /* ---------- Story carousel ----------
    A plain overflow-x scroller with scroll-snap: swipe and trackpad scrolling
    work with no JS, and every story stays reachable if the script never loads.
-   js/site.v2.js only adds the arrow buttons and their disabled state. */
+   js/site.v3.js only adds the arrow buttons and their disabled state. */
 .story-carousel { position: relative; }
 
 .carousel-track {
@@ -881,6 +881,17 @@ section { padding: 3rem 0; }
 
 @media (max-width: 700px) {
   .profile-grid { grid-template-columns: 1fr; }
+}
+
+/* The portrait is 350px tall but the bio runs ~2800px, so when Priorities
+   through Support sat in the grid's second column they stayed indented past
+   a 312px gutter of nothing — the whole page read as shoved to the right.
+   Only the intro belongs beside the portrait; everything from Priorities
+   down is its own centered column. Width matches what the grid column gave
+   it, so the cards keep their measure and only their position changes. */
+.bio-body {
+  max-width: 860px;
+  margin-inline: auto;
 }
 
 .headshot {
