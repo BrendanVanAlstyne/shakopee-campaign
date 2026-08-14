@@ -5,3 +5,11 @@ review-for-ali/
 */TRANSLATION-NOTES.md
 TRANSLATION-NOTES.md
 finance/
+
+# Form backend + local tooling. GitHub Pages serves everything in this repo, so
+# committing apps-script/ would publish the volunteer intake design — roster
+# columns, spam handling, the lot — at alivforshakopee.org/apps-script/. Nothing
+# in there is a secret, but it is a free map for anyone wanting to poison the
+# roster. Keep the folder locally; back it up somewhere private, not here.
+apps-script/
+.claude/
