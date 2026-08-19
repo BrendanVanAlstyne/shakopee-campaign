@@ -87,7 +87,7 @@
       <form class="form-card"
             data-signup-form
             method="post"
-            action="PASTE_YOUR_WEB_APP_URL_HERE"
+            action="https://script.google.com/macros/s/AKfycbxPDsHZ_1OpB_EagRZlwQsmgfSKjpnKCMVuWtyh-_XKyAR79mk5xRHOu-AT2dp4Fj9c/exec"
             accept-charset="UTF-8">
 
         <input type="hidden" name="form" value="volunteer">
@@ -128,31 +128,30 @@
 
         <fieldset class="field-group">
           <legend>Khi nào quý vị có thể giúp?</legend>
+          <span class="field-hint">Đây là các ca gõ cửa thường lệ của chúng tôi, giống nhau mỗi tuần. Hãy đánh dấu những ca thường phù hợp với quý vị: đây là lịch chung, không phải cam kết cho một ngày cụ thể.</span>
 
           <div class="field">
-            <label for="v-date">Ngày nào thuận tiện cho quý vị?</label>
-            <input type="date" id="v-date" name="date" max="2026-11-03">
+            <span class="field-label" id="v-shifts-label">Các ca gõ cửa hàng tuần</span>
+            <div class="check-stack" role="group" aria-labelledby="v-shifts-label">
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 10am-1pm"><span>Thứ Bảy, 10 giờ sáng – 1 giờ chiều</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 1-4pm"><span>Thứ Bảy, 1 – 4 giờ chiều</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sun 1-4pm"><span>Chủ Nhật, 1 – 4 giờ chiều</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Tue 5-8pm"><span>Tối Thứ Ba, 5 – 8 giờ tối</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Thu 5-8pm"><span>Tối Thứ Năm, 5 – 8 giờ tối</span></label>
+            </div>
+            <span class="field-hint">Các ca buổi tối sẽ kết thúc sớm hơn khi trời tối vào tháng Mười.</span>
           </div>
 
           <div class="field">
             <label class="check">
-              <input type="checkbox" name="flexibleDate" value="on">
-              <span>Ngày nào cũng được — chiến dịch cứ chọn ngày thuận tiện.</span>
+              <input type="checkbox" name="flexibleShift" value="on">
+              <span>Không ca nào phù hợp, nhưng tôi vẫn muốn giúp.</span>
             </label>
           </div>
 
           <div class="field">
-            <span class="field-label" id="v-times-label">Vào buổi nào trong ngày?</span>
-            <div class="check-stack" role="group" aria-labelledby="v-times-label">
-              <label class="check"><input type="checkbox" name="times" value="Morning"><span>Buổi sáng</span></label>
-              <label class="check"><input type="checkbox" name="times" value="Afternoon"><span>Buổi chiều</span></label>
-              <label class="check"><input type="checkbox" name="times" value="Evening"><span>Buổi tối</span></label>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="v-other-times">Còn ngày hoặc giờ nào khác thuận tiện không?</label>
-            <input type="text" id="v-other-times" name="otherTimes" placeholder="ví dụ: hầu hết các tối trong tuần sau 6 giờ">
+            <label for="v-other-times">Còn điều gì khác về lịch rảnh của quý vị không?</label>
+            <input type="text" id="v-other-times" name="otherTimes" placeholder="ví dụ: cách tuần vào Thứ Bảy, hoặc sáng các ngày trong tuần">
           </div>
         </fieldset>
 

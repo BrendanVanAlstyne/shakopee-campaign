@@ -88,7 +88,7 @@
       <form class="form-card"
             data-signup-form
             method="post"
-            action="PASTE_YOUR_WEB_APP_URL_HERE"
+            action="https://script.google.com/macros/s/AKfycbxPDsHZ_1OpB_EagRZlwQsmgfSKjpnKCMVuWtyh-_XKyAR79mk5xRHOu-AT2dp4Fj9c/exec"
             accept-charset="UTF-8">
 
         <input type="hidden" name="form" value="volunteer">
@@ -129,31 +129,30 @@
 
         <fieldset class="field-group">
           <legend>Goorma ayaad kaalmayn kartaa?</legend>
+          <span class="field-hint">Kuwani waa waqtiyada caadiga ah ee aan albaabbada ku garaacno, isku mid ayay yihiin toddobaad kasta. Calaamadee kuwa inta badan kugu habboon: waa jadwal guud, ma aha ballan taariikh gaar ah.</span>
 
           <div class="field">
-            <label for="v-date">Maalintee ayaa kugu habboon?</label>
-            <input type="date" id="v-date" name="date" max="2026-11-03">
+            <span class="field-label" id="v-shifts-label">Waqtiyada toddobaadlaha ah ee albaab-garaaca</span>
+            <div class="check-stack" role="group" aria-labelledby="v-shifts-label">
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 10am-1pm"><span>Sabtida, 10 subaxnimo – 1 duhurnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 1-4pm"><span>Sabtida, 1 – 4 galabnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sun 1-4pm"><span>Axadda, 1 – 4 galabnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Tue 5-8pm"><span>Talaadada fiidkii, 5 – 8 fiidnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Thu 5-8pm"><span>Khamiista fiidkii, 5 – 8 fiidnimo</span></label>
+            </div>
+            <span class="field-hint">Waqtiyada fiidka horay ayay u dhammaadaan marka ay mugdi noqoto Oktoobar.</span>
           </div>
 
           <div class="field">
             <label class="check">
-              <input type="checkbox" name="flexibleDate" value="on">
-              <span>Maalin kasta way igu habboon tahay — dooro tan ololaha ku habboon.</span>
+              <input type="checkbox" name="flexibleShift" value="on">
+              <span>Midna igu ma habboona, laakiin weli waan kaalmayn rabaa.</span>
             </label>
           </div>
 
           <div class="field">
-            <span class="field-label" id="v-times-label">Waqtigee maalinta?</span>
-            <div class="check-stack" role="group" aria-labelledby="v-times-label">
-              <label class="check"><input type="checkbox" name="times" value="Morning"><span>Subaxda</span></label>
-              <label class="check"><input type="checkbox" name="times" value="Afternoon"><span>Duhurka</span></label>
-              <label class="check"><input type="checkbox" name="times" value="Evening"><span>Fiidka</span></label>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="v-other-times">Ma jiraan maalmo ama saacado kale oo kugu habboon?</label>
-            <input type="text" id="v-other-times" name="otherTimes" placeholder="tusaale: inta badan fiidkii maalmaha shaqada ka dib 6-da">
+            <label for="v-other-times">Wax kale oo aan ka ogaanno waqtigaaga?</label>
+            <input type="text" id="v-other-times" name="otherTimes" placeholder="tusaale: Sabti kasta labaad, ama subaxyada maalmaha shaqada">
           </div>
         </fieldset>
 

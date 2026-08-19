@@ -86,7 +86,7 @@
       <form class="form-card"
             data-signup-form
             method="post"
-            action="PASTE_YOUR_WEB_APP_URL_HERE"
+            action="https://script.google.com/macros/s/AKfycbxPDsHZ_1OpB_EagRZlwQsmgfSKjpnKCMVuWtyh-_XKyAR79mk5xRHOu-AT2dp4Fj9c/exec"
             accept-charset="UTF-8">
 
         <input type="hidden" name="form" value="volunteer">
@@ -127,31 +127,30 @@
 
         <fieldset class="field-group">
           <legend>When can you help?</legend>
+          <span class="field-hint">These are our regular door-knocking shifts, the same every week. Check any that usually work for you — it's a standing pattern, not a commitment to a particular date.</span>
 
           <div class="field">
-            <label for="v-date">What day works for you?</label>
-            <input type="date" id="v-date" name="date" max="2026-11-03">
+            <span class="field-label" id="v-shifts-label">Weekly door-knocking shifts</span>
+            <div class="check-stack" role="group" aria-labelledby="v-shifts-label">
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 10am-1pm"><span>Saturdays, 10 am – 1 pm</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 1-4pm"><span>Saturdays, 1 – 4 pm</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sun 1-4pm"><span>Sundays, 1 – 4 pm</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Tue 5-8pm"><span>Tuesday evenings, 5 – 8 pm</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Thu 5-8pm"><span>Thursday evenings, 5 – 8 pm</span></label>
+            </div>
+            <span class="field-hint">Evening shifts finish earlier once it gets dark in October.</span>
           </div>
 
           <div class="field">
             <label class="check">
-              <input type="checkbox" name="flexibleDate" value="on">
-              <span>I'm flexible — pick a day that works for the campaign.</span>
+              <input type="checkbox" name="flexibleShift" value="on">
+              <span>None of these work for me — but I still want to help.</span>
             </label>
           </div>
 
           <div class="field">
-            <span class="field-label" id="v-times-label">What time of day?</span>
-            <div class="check-stack" role="group" aria-labelledby="v-times-label">
-              <label class="check"><input type="checkbox" name="times" value="Morning"><span>Morning</span></label>
-              <label class="check"><input type="checkbox" name="times" value="Afternoon"><span>Afternoon</span></label>
-              <label class="check"><input type="checkbox" name="times" value="Evening"><span>Evening</span></label>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="v-other-times">Any other days or times that work?</label>
-            <input type="text" id="v-other-times" name="otherTimes" placeholder="e.g. most weekday evenings after 6">
+            <label for="v-other-times">Anything else we should know about your availability?</label>
+            <input type="text" id="v-other-times" name="otherTimes" placeholder="e.g. every other Saturday, or free weekday mornings">
           </div>
         </fieldset>
 

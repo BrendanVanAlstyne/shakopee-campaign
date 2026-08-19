@@ -88,7 +88,7 @@
       <form class="form-card"
             data-signup-form
             method="post"
-            action="PASTE_YOUR_WEB_APP_URL_HERE"
+            action="https://script.google.com/macros/s/AKfycbxPDsHZ_1OpB_EagRZlwQsmgfSKjpnKCMVuWtyh-_XKyAR79mk5xRHOu-AT2dp4Fj9c/exec"
             accept-charset="UTF-8">
 
         <input type="hidden" name="form" value="volunteer">
@@ -129,31 +129,30 @@
 
         <fieldset class="field-group">
           <legend>Quand pouvez-vous aider&nbsp;?</legend>
+          <span class="field-hint">Voici nos créneaux habituels de porte-à-porte, les mêmes chaque semaine. Cochez ceux qui vous conviennent en général&nbsp;: c'est une disponibilité type, pas un engagement pour une date précise.</span>
 
           <div class="field">
-            <label for="v-date">Quel jour vous convient&nbsp;?</label>
-            <input type="date" id="v-date" name="date" max="2026-11-03">
+            <span class="field-label" id="v-shifts-label">Créneaux hebdomadaires de porte-à-porte</span>
+            <div class="check-stack" role="group" aria-labelledby="v-shifts-label">
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 10am-1pm"><span>Samedis, 10 h – 13 h</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 1-4pm"><span>Samedis, 13 h – 16 h</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sun 1-4pm"><span>Dimanches, 13 h – 16 h</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Tue 5-8pm"><span>Mardis en soirée, 17 h – 20 h</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Thu 5-8pm"><span>Jeudis en soirée, 17 h – 20 h</span></label>
+            </div>
+            <span class="field-hint">Les créneaux du soir se terminent plus tôt lorsque la nuit tombe en octobre.</span>
           </div>
 
           <div class="field">
             <label class="check">
-              <input type="checkbox" name="flexibleDate" value="on">
-              <span>Je suis flexible — choisissez un jour qui arrange la campagne.</span>
+              <input type="checkbox" name="flexibleShift" value="on">
+              <span>Aucun ne me convient, mais je veux quand même aider.</span>
             </label>
           </div>
 
           <div class="field">
-            <span class="field-label" id="v-times-label">À quel moment de la journée&nbsp;?</span>
-            <div class="check-stack" role="group" aria-labelledby="v-times-label">
-              <label class="check"><input type="checkbox" name="times" value="Morning"><span>Le matin</span></label>
-              <label class="check"><input type="checkbox" name="times" value="Afternoon"><span>L'après-midi</span></label>
-              <label class="check"><input type="checkbox" name="times" value="Evening"><span>Le soir</span></label>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="v-other-times">D'autres jours ou horaires qui vous conviennent&nbsp;?</label>
-            <input type="text" id="v-other-times" name="otherTimes" placeholder="p. ex. la plupart des soirs de semaine après 18 h">
+            <label for="v-other-times">Autre chose à savoir sur vos disponibilités&nbsp;?</label>
+            <input type="text" id="v-other-times" name="otherTimes" placeholder="p. ex. un samedi sur deux, ou les matins en semaine">
           </div>
         </fieldset>
 

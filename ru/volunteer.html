@@ -87,7 +87,7 @@
       <form class="form-card"
             data-signup-form
             method="post"
-            action="PASTE_YOUR_WEB_APP_URL_HERE"
+            action="https://script.google.com/macros/s/AKfycbxPDsHZ_1OpB_EagRZlwQsmgfSKjpnKCMVuWtyh-_XKyAR79mk5xRHOu-AT2dp4Fj9c/exec"
             accept-charset="UTF-8">
 
         <input type="hidden" name="form" value="volunteer">
@@ -128,31 +128,30 @@
 
         <fieldset class="field-group">
           <legend>Когда вы можете помочь?</legend>
+          <span class="field-hint">Это наши постоянные смены обхода домов, одни и те же каждую неделю. Отметьте те, которые вам обычно подходят: это общий график, а не обязательство на конкретную дату.</span>
 
           <div class="field">
-            <label for="v-date">Какой день вам подходит?</label>
-            <input type="date" id="v-date" name="date" max="2026-11-03">
+            <span class="field-label" id="v-shifts-label">Еженедельные смены обхода домов</span>
+            <div class="check-stack" role="group" aria-labelledby="v-shifts-label">
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 10am-1pm"><span>Суббота, 10:00 – 13:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 1-4pm"><span>Суббота, 13:00 – 16:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sun 1-4pm"><span>Воскресенье, 13:00 – 16:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Tue 5-8pm"><span>Вторник, вечер, 17:00 – 20:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Thu 5-8pm"><span>Четверг, вечер, 17:00 – 20:00</span></label>
+            </div>
+            <span class="field-hint">В октябре вечерние смены заканчиваются раньше, когда темнеет.</span>
           </div>
 
           <div class="field">
             <label class="check">
-              <input type="checkbox" name="flexibleDate" value="on">
-              <span>Мне подходит любой день — выберите тот, который удобен кампании.</span>
+              <input type="checkbox" name="flexibleShift" value="on">
+              <span>Ни одна не подходит, но я всё равно хочу помочь.</span>
             </label>
           </div>
 
           <div class="field">
-            <span class="field-label" id="v-times-label">В какое время дня?</span>
-            <div class="check-stack" role="group" aria-labelledby="v-times-label">
-              <label class="check"><input type="checkbox" name="times" value="Morning"><span>Утром</span></label>
-              <label class="check"><input type="checkbox" name="times" value="Afternoon"><span>Днём</span></label>
-              <label class="check"><input type="checkbox" name="times" value="Evening"><span>Вечером</span></label>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="v-other-times">Есть ли другие дни или часы, которые вам подходят?</label>
-            <input type="text" id="v-other-times" name="otherTimes" placeholder="например, почти любой будний вечер после 18:00">
+            <label for="v-other-times">Что-то ещё, что нам стоит знать о вашем расписании?</label>
+            <input type="text" id="v-other-times" name="otherTimes" placeholder="напр. каждую вторую субботу или будни утром">
           </div>
         </fieldset>
 
