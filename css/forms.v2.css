@@ -306,3 +306,41 @@
 }
 
 .form-unconfigured strong { color: #4a3800; }
+
+/* ---------- Shift picker ----------
+   Twenty-one shifts is too many for one flat list, and a <select multiple> is
+   the wrong control for it: on a phone the options are tiny, and on a desktop
+   it needs ctrl-click to pick more than one, which people do not discover and
+   so they pick exactly one shift. Volunteers offering every Saturday would
+   silently look like volunteers offering one.
+
+   So: one card per day, three checkboxes inside. Multi-select stays obvious,
+   every target is a full-width row on a phone, and the grid reflows from four
+   columns down to one without a media query. */
+
+.shift-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: 0.75rem;
+}
+
+.shift-day {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 0.6rem 0.65rem 0.7rem;
+}
+
+.shift-day-name {
+  display: block;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+  padding-left: 0.5rem;
+}
+
+.shift-day .check { padding: 0.32rem 0.5rem; }
+
+/* Times line up across the cards instead of drifting with digit width. */
+.shift-day .check span { font-variant-numeric: tabular-nums; }

@@ -6,7 +6,7 @@
 <title>Станьте волонтёром — Ali Verney и Brendan Van Alstyne, кандидаты в городской совет Shakopee</title>
 <meta name="description" content="Станьте волонтёром кампаний Ali Verney и Brendan Van Alstyne в городской совет Shakopee. Обход домов, звонки, встречи у себя дома.">
 <link rel="stylesheet" href="../css/style.v5.css">
-<link rel="stylesheet" href="../css/forms.v1.css">
+<link rel="stylesheet" href="../css/forms.v2.css">
 <link rel="alternate" hreflang="en" href="https://alivforshakopee.org/volunteer.html">
 <link rel="alternate" hreflang="es" href="https://alivforshakopee.org/es/volunteer.html">
 <link rel="alternate" hreflang="fr" href="https://alivforshakopee.org/fr/volunteer.html">
@@ -127,19 +127,51 @@
         </fieldset>
 
         <fieldset class="field-group">
-          <legend>Когда вы можете помочь?</legend>
-          <span class="field-hint">Это наши постоянные смены обхода домов, одни и те же каждую неделю. Отметьте те, которые вам обычно подходят: это общий график, а не обязательство на конкретную дату.</span>
+          <legend>Смены</legend>
 
-          <div class="field">
-            <span class="field-label" id="v-shifts-label">Еженедельные смены обхода домов</span>
-            <div class="check-stack" role="group" aria-labelledby="v-shifts-label">
-              <label class="check"><input type="checkbox" name="shifts" value="Sat 10am-1pm"><span>Суббота, 10:00 – 13:00</span></label>
-              <label class="check"><input type="checkbox" name="shifts" value="Sat 1-4pm"><span>Суббота, 13:00 – 16:00</span></label>
-              <label class="check"><input type="checkbox" name="shifts" value="Sun 1-4pm"><span>Воскресенье, 13:00 – 16:00</span></label>
-              <label class="check"><input type="checkbox" name="shifts" value="Tue 5-8pm"><span>Вторник, вечер, 17:00 – 20:00</span></label>
-              <label class="check"><input type="checkbox" name="shifts" value="Thu 5-8pm"><span>Четверг, вечер, 17:00 – 20:00</span></label>
+          <div class="shift-grid">
+            <div class="shift-day" role="group" aria-labelledby="v-shift-mon">
+              <span class="shift-day-name" id="v-shift-mon">Понедельник</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Mon 11am-2pm"><span>11:00 – 14:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Mon 2-5pm"><span>14:00 – 17:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Mon 5-8pm"><span>17:00 – 20:00</span></label>
             </div>
-            <span class="field-hint">В октябре вечерние смены заканчиваются раньше, когда темнеет.</span>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-tue">
+              <span class="shift-day-name" id="v-shift-tue">Вторник</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Tue 11am-2pm"><span>11:00 – 14:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Tue 2-5pm"><span>14:00 – 17:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Tue 5-8pm"><span>17:00 – 20:00</span></label>
+            </div>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-wed">
+              <span class="shift-day-name" id="v-shift-wed">Среда</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Wed 11am-2pm"><span>11:00 – 14:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Wed 2-5pm"><span>14:00 – 17:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Wed 5-8pm"><span>17:00 – 20:00</span></label>
+            </div>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-thu">
+              <span class="shift-day-name" id="v-shift-thu">Четверг</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Thu 11am-2pm"><span>11:00 – 14:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Thu 2-5pm"><span>14:00 – 17:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Thu 5-8pm"><span>17:00 – 20:00</span></label>
+            </div>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-fri">
+              <span class="shift-day-name" id="v-shift-fri">Пятница</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Fri 11am-2pm"><span>11:00 – 14:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Fri 2-5pm"><span>14:00 – 17:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Fri 5-8pm"><span>17:00 – 20:00</span></label>
+            </div>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-sat">
+              <span class="shift-day-name" id="v-shift-sat">Суббота</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 11am-2pm"><span>11:00 – 14:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 2-5pm"><span>14:00 – 17:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 5-8pm"><span>17:00 – 20:00</span></label>
+            </div>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-sun">
+              <span class="shift-day-name" id="v-shift-sun">Воскресенье</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Sun 11am-2pm"><span>11:00 – 14:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sun 2-5pm"><span>14:00 – 17:00</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sun 5-8pm"><span>17:00 – 20:00</span></label>
+            </div>
           </div>
 
           <div class="field">
@@ -148,33 +180,9 @@
               <span>Ни одна не подходит, но я всё равно хочу помочь.</span>
             </label>
           </div>
-
           <div class="field">
             <label for="v-other-times">Что-то ещё, что нам стоит знать о вашем расписании?</label>
             <input type="text" id="v-other-times" name="otherTimes" placeholder="напр. каждую вторую субботу или будни утром">
-          </div>
-        </fieldset>
-
-        <fieldset class="field-group">
-          <legend>Чем вы хотели бы заняться?</legend>
-          <span class="field-hint">Отметьте всё, что подходит. Это пока ни к чему не обязывает — сначала мы поговорим.</span>
-
-          <div class="check-grid">
-            <label class="check"><input type="checkbox" name="willing" value="Doors"><span>Обход домов</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Phones / texts"><span>Звонки и сообщения</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Lit drop"><span>Разносить листовки</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Event setup"><span>Помогать готовить мероприятия</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Host house party"><span>Принять встречу у себя дома</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Lawn sign"><span>Поставить табличку во дворе</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Poll greeter"><span>Встречать избирателей на участке</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Election Day rides"><span>Возить соседей на голосование</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Social media"><span>Соцсети</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Data entry"><span>Ввод данных</span></label>
-          </div>
-
-          <div class="field" style="margin-top:1rem">
-            <label for="v-willing-other">Что-то ещё?</label>
-            <input type="text" id="v-willing-other" name="willingOther">
           </div>
         </fieldset>
 
@@ -197,6 +205,28 @@
             </div>
           </div>
         </fieldset>
+
+        <fieldset class="field-group">
+          <legend>Чем вы хотели бы заняться?</legend>
+          <span class="field-hint">Отметьте всё, что подходит. Это пока ни к чему не обязывает — сначала мы поговорим.</span>
+
+          <div class="check-grid">
+            <label class="check"><input type="checkbox" name="willing" value="Doors"><span>Обход домов</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Phones / texts"><span>Звонки и сообщения</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Lit drop"><span>Разносить листовки</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Host house party"><span>Принять встречу у себя дома</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Lawn sign"><span>Поставить табличку во дворе</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Poll greeter"><span>Встречать избирателей на участке</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Election Day rides"><span>Возить соседей на голосование</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Social media"><span>Соцсети</span></label>
+          </div>
+
+          <div class="field" style="margin-top:1rem">
+            <label for="v-willing-other">Что-то ещё?</label>
+            <input type="text" id="v-willing-other" name="willingOther">
+          </div>
+        </fieldset>
+
 
         <fieldset class="field-group">
           <legend>Что-нибудь ещё?</legend>

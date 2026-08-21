@@ -6,7 +6,7 @@
 <title>Nala Kaalmee — Ali Verney iyo Brendan Van Alstyne oo u Tartamaya Golaha Magaalada Shakopee</title>
 <meta name="description" content="Nala kaalmee ololaha Ali Verney iyo Brendan Van Alstyne ee Golaha Magaalada Shakopee. Albaabbo garaac, wac dadka, ama kulan guriga ku qabo.">
 <link rel="stylesheet" href="../css/style.v5.css">
-<link rel="stylesheet" href="../css/forms.v1.css">
+<link rel="stylesheet" href="../css/forms.v2.css">
 <link rel="alternate" hreflang="en" href="https://alivforshakopee.org/volunteer.html">
 <link rel="alternate" hreflang="es" href="https://alivforshakopee.org/es/volunteer.html">
 <link rel="alternate" hreflang="fr" href="https://alivforshakopee.org/fr/volunteer.html">
@@ -128,19 +128,51 @@
         </fieldset>
 
         <fieldset class="field-group">
-          <legend>Goorma ayaad kaalmayn kartaa?</legend>
-          <span class="field-hint">Kuwani waa waqtiyada caadiga ah ee aan albaabbada ku garaacno, isku mid ayay yihiin toddobaad kasta. Calaamadee kuwa inta badan kugu habboon: waa jadwal guud, ma aha ballan taariikh gaar ah.</span>
+          <legend>Shifyada</legend>
 
-          <div class="field">
-            <span class="field-label" id="v-shifts-label">Waqtiyada toddobaadlaha ah ee albaab-garaaca</span>
-            <div class="check-stack" role="group" aria-labelledby="v-shifts-label">
-              <label class="check"><input type="checkbox" name="shifts" value="Sat 10am-1pm"><span>Sabtida, 10 subaxnimo – 1 duhurnimo</span></label>
-              <label class="check"><input type="checkbox" name="shifts" value="Sat 1-4pm"><span>Sabtida, 1 – 4 galabnimo</span></label>
-              <label class="check"><input type="checkbox" name="shifts" value="Sun 1-4pm"><span>Axadda, 1 – 4 galabnimo</span></label>
-              <label class="check"><input type="checkbox" name="shifts" value="Tue 5-8pm"><span>Talaadada fiidkii, 5 – 8 fiidnimo</span></label>
-              <label class="check"><input type="checkbox" name="shifts" value="Thu 5-8pm"><span>Khamiista fiidkii, 5 – 8 fiidnimo</span></label>
+          <div class="shift-grid">
+            <div class="shift-day" role="group" aria-labelledby="v-shift-mon">
+              <span class="shift-day-name" id="v-shift-mon">Isniinta</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Mon 11am-2pm"><span>11 subaxnimo – 2 duhurnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Mon 2-5pm"><span>2 – 5 galabnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Mon 5-8pm"><span>5 – 8 fiidnimo</span></label>
             </div>
-            <span class="field-hint">Waqtiyada fiidka horay ayay u dhammaadaan marka ay mugdi noqoto Oktoobar.</span>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-tue">
+              <span class="shift-day-name" id="v-shift-tue">Talaadada</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Tue 11am-2pm"><span>11 subaxnimo – 2 duhurnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Tue 2-5pm"><span>2 – 5 galabnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Tue 5-8pm"><span>5 – 8 fiidnimo</span></label>
+            </div>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-wed">
+              <span class="shift-day-name" id="v-shift-wed">Arbacada</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Wed 11am-2pm"><span>11 subaxnimo – 2 duhurnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Wed 2-5pm"><span>2 – 5 galabnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Wed 5-8pm"><span>5 – 8 fiidnimo</span></label>
+            </div>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-thu">
+              <span class="shift-day-name" id="v-shift-thu">Khamiista</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Thu 11am-2pm"><span>11 subaxnimo – 2 duhurnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Thu 2-5pm"><span>2 – 5 galabnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Thu 5-8pm"><span>5 – 8 fiidnimo</span></label>
+            </div>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-fri">
+              <span class="shift-day-name" id="v-shift-fri">Jimcaha</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Fri 11am-2pm"><span>11 subaxnimo – 2 duhurnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Fri 2-5pm"><span>2 – 5 galabnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Fri 5-8pm"><span>5 – 8 fiidnimo</span></label>
+            </div>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-sat">
+              <span class="shift-day-name" id="v-shift-sat">Sabtida</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 11am-2pm"><span>11 subaxnimo – 2 duhurnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 2-5pm"><span>2 – 5 galabnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 5-8pm"><span>5 – 8 fiidnimo</span></label>
+            </div>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-sun">
+              <span class="shift-day-name" id="v-shift-sun">Axadda</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Sun 11am-2pm"><span>11 subaxnimo – 2 duhurnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sun 2-5pm"><span>2 – 5 galabnimo</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sun 5-8pm"><span>5 – 8 fiidnimo</span></label>
+            </div>
           </div>
 
           <div class="field">
@@ -149,33 +181,9 @@
               <span>Midna igu ma habboona, laakiin weli waan kaalmayn rabaa.</span>
             </label>
           </div>
-
           <div class="field">
             <label for="v-other-times">Wax kale oo aan ka ogaanno waqtigaaga?</label>
             <input type="text" id="v-other-times" name="otherTimes" placeholder="tusaale: Sabti kasta labaad, ama subaxyada maalmaha shaqada">
-          </div>
-        </fieldset>
-
-        <fieldset class="field-group">
-          <legend>Maxaad jeclaan lahayd inaad qabato?</legend>
-          <span class="field-hint">Calaamadee inta aad doonto. Waxba weli kuma qasbana — marka hore waannu wada hadli doonnaa.</span>
-
-          <div class="check-grid">
-            <label class="check"><input type="checkbox" name="willing" value="Doors"><span>Albaabbada garaacidda</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Phones / texts"><span>Wicitaanno iyo fariimo</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Lit drop"><span>Warqado qaybin</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Event setup"><span>Ka caawin diyaarinta munaasabadaha</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Host house party"><span>Kulan guriga ku martigelin</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Lawn sign"><span>Calaamad barxadda dhigid</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Poll greeter"><span>Salaamidda codbixiyayaasha goobta</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Election Day rides"><span>Deriska geynta goobta codbixinta</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Social media"><span>Baraha bulshada</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Data entry"><span>Xogta gelinta</span></label>
-          </div>
-
-          <div class="field" style="margin-top:1rem">
-            <label for="v-willing-other">Wax kale?</label>
-            <input type="text" id="v-willing-other" name="willingOther">
           </div>
         </fieldset>
 
@@ -198,6 +206,28 @@
             </div>
           </div>
         </fieldset>
+
+        <fieldset class="field-group">
+          <legend>Maxaad jeclaan lahayd inaad qabato?</legend>
+          <span class="field-hint">Calaamadee inta aad doonto. Waxba weli kuma qasbana — marka hore waannu wada hadli doonnaa.</span>
+
+          <div class="check-grid">
+            <label class="check"><input type="checkbox" name="willing" value="Doors"><span>Albaabbada garaacidda</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Phones / texts"><span>Wicitaanno iyo fariimo</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Lit drop"><span>Warqado qaybin</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Host house party"><span>Kulan guriga ku martigelin</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Lawn sign"><span>Calaamad barxadda dhigid</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Poll greeter"><span>Salaamidda codbixiyayaasha goobta</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Election Day rides"><span>Deriska geynta goobta codbixinta</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Social media"><span>Baraha bulshada</span></label>
+          </div>
+
+          <div class="field" style="margin-top:1rem">
+            <label for="v-willing-other">Wax kale?</label>
+            <input type="text" id="v-willing-other" name="willingOther">
+          </div>
+        </fieldset>
+
 
         <fieldset class="field-group">
           <legend>Wax kale?</legend>

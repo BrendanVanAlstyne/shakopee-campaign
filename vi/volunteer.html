@@ -6,7 +6,7 @@
 <title>Tình Nguyện — Ali Verney và Brendan Van Alstyne ứng cử Hội đồng Thành phố Shakopee</title>
 <meta name="description" content="Tình nguyện cùng chiến dịch của Ali Verney và Brendan Van Alstyne ứng cử Hội đồng Thành phố Shakopee. Gõ cửa, gọi điện, hoặc tổ chức gặp mặt tại nhà.">
 <link rel="stylesheet" href="../css/style.v5.css">
-<link rel="stylesheet" href="../css/forms.v1.css">
+<link rel="stylesheet" href="../css/forms.v2.css">
 <link rel="alternate" hreflang="en" href="https://alivforshakopee.org/volunteer.html">
 <link rel="alternate" hreflang="es" href="https://alivforshakopee.org/es/volunteer.html">
 <link rel="alternate" hreflang="fr" href="https://alivforshakopee.org/fr/volunteer.html">
@@ -127,19 +127,51 @@
         </fieldset>
 
         <fieldset class="field-group">
-          <legend>Khi nào quý vị có thể giúp?</legend>
-          <span class="field-hint">Đây là các ca gõ cửa thường lệ của chúng tôi, giống nhau mỗi tuần. Hãy đánh dấu những ca thường phù hợp với quý vị: đây là lịch chung, không phải cam kết cho một ngày cụ thể.</span>
+          <legend>Ca trực</legend>
 
-          <div class="field">
-            <span class="field-label" id="v-shifts-label">Các ca gõ cửa hàng tuần</span>
-            <div class="check-stack" role="group" aria-labelledby="v-shifts-label">
-              <label class="check"><input type="checkbox" name="shifts" value="Sat 10am-1pm"><span>Thứ Bảy, 10 giờ sáng – 1 giờ chiều</span></label>
-              <label class="check"><input type="checkbox" name="shifts" value="Sat 1-4pm"><span>Thứ Bảy, 1 – 4 giờ chiều</span></label>
-              <label class="check"><input type="checkbox" name="shifts" value="Sun 1-4pm"><span>Chủ Nhật, 1 – 4 giờ chiều</span></label>
-              <label class="check"><input type="checkbox" name="shifts" value="Tue 5-8pm"><span>Tối Thứ Ba, 5 – 8 giờ tối</span></label>
-              <label class="check"><input type="checkbox" name="shifts" value="Thu 5-8pm"><span>Tối Thứ Năm, 5 – 8 giờ tối</span></label>
+          <div class="shift-grid">
+            <div class="shift-day" role="group" aria-labelledby="v-shift-mon">
+              <span class="shift-day-name" id="v-shift-mon">Thứ Hai</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Mon 11am-2pm"><span>11 giờ sáng – 2 giờ chiều</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Mon 2-5pm"><span>2 – 5 giờ chiều</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Mon 5-8pm"><span>5 – 8 giờ tối</span></label>
             </div>
-            <span class="field-hint">Các ca buổi tối sẽ kết thúc sớm hơn khi trời tối vào tháng Mười.</span>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-tue">
+              <span class="shift-day-name" id="v-shift-tue">Thứ Ba</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Tue 11am-2pm"><span>11 giờ sáng – 2 giờ chiều</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Tue 2-5pm"><span>2 – 5 giờ chiều</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Tue 5-8pm"><span>5 – 8 giờ tối</span></label>
+            </div>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-wed">
+              <span class="shift-day-name" id="v-shift-wed">Thứ Tư</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Wed 11am-2pm"><span>11 giờ sáng – 2 giờ chiều</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Wed 2-5pm"><span>2 – 5 giờ chiều</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Wed 5-8pm"><span>5 – 8 giờ tối</span></label>
+            </div>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-thu">
+              <span class="shift-day-name" id="v-shift-thu">Thứ Năm</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Thu 11am-2pm"><span>11 giờ sáng – 2 giờ chiều</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Thu 2-5pm"><span>2 – 5 giờ chiều</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Thu 5-8pm"><span>5 – 8 giờ tối</span></label>
+            </div>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-fri">
+              <span class="shift-day-name" id="v-shift-fri">Thứ Sáu</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Fri 11am-2pm"><span>11 giờ sáng – 2 giờ chiều</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Fri 2-5pm"><span>2 – 5 giờ chiều</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Fri 5-8pm"><span>5 – 8 giờ tối</span></label>
+            </div>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-sat">
+              <span class="shift-day-name" id="v-shift-sat">Thứ Bảy</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 11am-2pm"><span>11 giờ sáng – 2 giờ chiều</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 2-5pm"><span>2 – 5 giờ chiều</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sat 5-8pm"><span>5 – 8 giờ tối</span></label>
+            </div>
+            <div class="shift-day" role="group" aria-labelledby="v-shift-sun">
+              <span class="shift-day-name" id="v-shift-sun">Chủ Nhật</span>
+              <label class="check"><input type="checkbox" name="shifts" value="Sun 11am-2pm"><span>11 giờ sáng – 2 giờ chiều</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sun 2-5pm"><span>2 – 5 giờ chiều</span></label>
+              <label class="check"><input type="checkbox" name="shifts" value="Sun 5-8pm"><span>5 – 8 giờ tối</span></label>
+            </div>
           </div>
 
           <div class="field">
@@ -148,33 +180,9 @@
               <span>Không ca nào phù hợp, nhưng tôi vẫn muốn giúp.</span>
             </label>
           </div>
-
           <div class="field">
             <label for="v-other-times">Còn điều gì khác về lịch rảnh của quý vị không?</label>
             <input type="text" id="v-other-times" name="otherTimes" placeholder="ví dụ: cách tuần vào Thứ Bảy, hoặc sáng các ngày trong tuần">
-          </div>
-        </fieldset>
-
-        <fieldset class="field-group">
-          <legend>Quý vị muốn làm gì?</legend>
-          <span class="field-hint">Chọn bao nhiêu tùy ý. Chưa có gì là cam kết cả — chúng ta sẽ nói chuyện trước.</span>
-
-          <div class="check-grid">
-            <label class="check"><input type="checkbox" name="willing" value="Doors"><span>Đi gõ cửa từng nhà</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Phones / texts"><span>Gọi điện và nhắn tin</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Lit drop"><span>Phát tờ rơi</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Event setup"><span>Giúp chuẩn bị sự kiện</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Host house party"><span>Tổ chức gặp mặt tại nhà</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Lawn sign"><span>Cắm bảng trước sân nhà</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Poll greeter"><span>Chào cử tri tại điểm bỏ phiếu</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Election Day rides"><span>Chở hàng xóm đi bỏ phiếu</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Social media"><span>Mạng xã hội</span></label>
-            <label class="check"><input type="checkbox" name="willing" value="Data entry"><span>Nhập liệu</span></label>
-          </div>
-
-          <div class="field" style="margin-top:1rem">
-            <label for="v-willing-other">Việc gì khác?</label>
-            <input type="text" id="v-willing-other" name="willingOther">
           </div>
         </fieldset>
 
@@ -197,6 +205,28 @@
             </div>
           </div>
         </fieldset>
+
+        <fieldset class="field-group">
+          <legend>Quý vị muốn làm gì?</legend>
+          <span class="field-hint">Chọn bao nhiêu tùy ý. Chưa có gì là cam kết cả — chúng ta sẽ nói chuyện trước.</span>
+
+          <div class="check-grid">
+            <label class="check"><input type="checkbox" name="willing" value="Doors"><span>Đi gõ cửa từng nhà</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Phones / texts"><span>Gọi điện và nhắn tin</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Lit drop"><span>Phát tờ rơi</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Host house party"><span>Tổ chức gặp mặt tại nhà</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Lawn sign"><span>Cắm bảng trước sân nhà</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Poll greeter"><span>Chào cử tri tại điểm bỏ phiếu</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Election Day rides"><span>Chở hàng xóm đi bỏ phiếu</span></label>
+            <label class="check"><input type="checkbox" name="willing" value="Social media"><span>Mạng xã hội</span></label>
+          </div>
+
+          <div class="field" style="margin-top:1rem">
+            <label for="v-willing-other">Việc gì khác?</label>
+            <input type="text" id="v-willing-other" name="willingOther">
+          </div>
+        </fieldset>
+
 
         <fieldset class="field-group">
           <legend>Còn điều gì khác?</legend>
