@@ -126,6 +126,26 @@
         </fieldset>
 
         <fieldset class="field-group">
+          <legend>Your own street</legend>
+
+          <label class="check check-feature">
+            <input type="checkbox" name="ownNeighborhood" value="on" data-reveals="v-own-block">
+            <span>
+              <span class="check-title">I'd like to knock my own neighborhood.</span>
+              <span class="check-note">A door opens differently for someone who lives two houses down. If this is you, one of us will come out and knock it with you.</span>
+            </span>
+          </label>
+
+          <div class="conditional" id="v-own-block">
+            <div class="field">
+              <label for="v-address">Your address</label>
+              <span class="field-hint">So we know which streets to cut for you and where to meet. We don't publish it or share it outside the campaign.</span>
+              <input type="text" id="v-address" name="address" autocomplete="street-address" data-required-when-shown placeholder="Street address, Shakopee MN">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="field-group">
           <legend>Shifts</legend>
 
           <div class="shift-grid">
@@ -182,26 +202,6 @@
           <div class="field">
             <label for="v-other-times">Anything else we should know about your availability?</label>
             <input type="text" id="v-other-times" name="otherTimes" placeholder="e.g. every other Saturday, or free weekday mornings">
-          </div>
-        </fieldset>
-
-        <fieldset class="field-group">
-          <legend>Your own street</legend>
-
-          <label class="check check-feature">
-            <input type="checkbox" name="ownNeighborhood" value="on" data-reveals="v-own-block">
-            <span>
-              <span class="check-title">I'd like to knock my own neighborhood.</span>
-              <span class="check-note">A door opens differently for someone who lives two houses down. If this is you, one of us will come out and knock it with you.</span>
-            </span>
-          </label>
-
-          <div class="conditional" id="v-own-block">
-            <div class="field">
-              <label for="v-address">Your address</label>
-              <span class="field-hint">So we know which streets to cut for you and where to meet. We don't publish it or share it outside the campaign.</span>
-              <input type="text" id="v-address" name="address" autocomplete="street-address" data-required-when-shown placeholder="Street address, Shakopee MN">
-            </div>
           </div>
         </fieldset>
 

@@ -128,6 +128,26 @@
         </fieldset>
 
         <fieldset class="field-group">
+          <legend>Votre propre rue</legend>
+
+          <label class="check check-feature">
+            <input type="checkbox" name="ownNeighborhood" value="on" data-reveals="v-own-block">
+            <span>
+              <span class="check-title">J'aimerais faire du porte-à-porte dans mon propre quartier.</span>
+              <span class="check-note">Une porte s'ouvre autrement pour quelqu'un qui habite deux maisons plus loin. Si c'est votre cas, l'un de nous viendra le faire avec vous.</span>
+            </span>
+          </label>
+
+          <div class="conditional" id="v-own-block">
+            <div class="field">
+              <label for="v-address">Votre adresse</label>
+              <span class="field-hint">Pour savoir quelles rues vous réserver et où vous retrouver. Nous ne la publions pas et ne la partageons pas en dehors de la campagne.</span>
+              <input type="text" id="v-address" name="address" autocomplete="street-address" data-required-when-shown placeholder="Adresse, Shakopee MN">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="field-group">
           <legend>Créneaux</legend>
 
           <div class="shift-grid">
@@ -184,26 +204,6 @@
           <div class="field">
             <label for="v-other-times">Autre chose à savoir sur vos disponibilités&nbsp;?</label>
             <input type="text" id="v-other-times" name="otherTimes" placeholder="p. ex. un samedi sur deux, ou les matins en semaine">
-          </div>
-        </fieldset>
-
-        <fieldset class="field-group">
-          <legend>Votre propre rue</legend>
-
-          <label class="check check-feature">
-            <input type="checkbox" name="ownNeighborhood" value="on" data-reveals="v-own-block">
-            <span>
-              <span class="check-title">J'aimerais faire du porte-à-porte dans mon propre quartier.</span>
-              <span class="check-note">Une porte s'ouvre autrement pour quelqu'un qui habite deux maisons plus loin. Si c'est votre cas, l'un de nous viendra le faire avec vous.</span>
-            </span>
-          </label>
-
-          <div class="conditional" id="v-own-block">
-            <div class="field">
-              <label for="v-address">Votre adresse</label>
-              <span class="field-hint">Pour savoir quelles rues vous réserver et où vous retrouver. Nous ne la publions pas et ne la partageons pas en dehors de la campagne.</span>
-              <input type="text" id="v-address" name="address" autocomplete="street-address" data-required-when-shown placeholder="Adresse, Shakopee MN">
-            </div>
           </div>
         </fieldset>
 

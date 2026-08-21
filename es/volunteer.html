@@ -127,6 +127,26 @@
         </fieldset>
 
         <fieldset class="field-group">
+          <legend>Tu propia calle</legend>
+
+          <label class="check check-feature">
+            <input type="checkbox" name="ownNeighborhood" value="on" data-reveals="v-own-block">
+            <span>
+              <span class="check-title">Me gustaría tocar puertas en mi propio vecindario.</span>
+              <span class="check-note">Una puerta se abre distinto cuando quien toca vive dos casas más allá. Si este es tu caso, uno de nosotros irá a tocar puertas contigo.</span>
+            </span>
+          </label>
+
+          <div class="conditional" id="v-own-block">
+            <div class="field">
+              <label for="v-address">Tu dirección</label>
+              <span class="field-hint">Para saber qué calles asignarte y dónde encontrarnos. No la publicamos ni la compartimos fuera de la campaña.</span>
+              <input type="text" id="v-address" name="address" autocomplete="street-address" data-required-when-shown placeholder="Dirección, Shakopee MN">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="field-group">
           <legend>Turnos</legend>
 
           <div class="shift-grid">
@@ -183,26 +203,6 @@
           <div class="field">
             <label for="v-other-times">¿Algo más que debamos saber sobre tu disponibilidad?</label>
             <input type="text" id="v-other-times" name="otherTimes" placeholder="p. ej. sábados alternos, o mañanas entre semana">
-          </div>
-        </fieldset>
-
-        <fieldset class="field-group">
-          <legend>Tu propia calle</legend>
-
-          <label class="check check-feature">
-            <input type="checkbox" name="ownNeighborhood" value="on" data-reveals="v-own-block">
-            <span>
-              <span class="check-title">Me gustaría tocar puertas en mi propio vecindario.</span>
-              <span class="check-note">Una puerta se abre distinto cuando quien toca vive dos casas más allá. Si este es tu caso, uno de nosotros irá a tocar puertas contigo.</span>
-            </span>
-          </label>
-
-          <div class="conditional" id="v-own-block">
-            <div class="field">
-              <label for="v-address">Tu dirección</label>
-              <span class="field-hint">Para saber qué calles asignarte y dónde encontrarnos. No la publicamos ni la compartimos fuera de la campaña.</span>
-              <input type="text" id="v-address" name="address" autocomplete="street-address" data-required-when-shown placeholder="Dirección, Shakopee MN">
-            </div>
           </div>
         </fieldset>
 

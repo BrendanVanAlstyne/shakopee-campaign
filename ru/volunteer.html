@@ -127,6 +127,26 @@
         </fieldset>
 
         <fieldset class="field-group">
+          <legend>Ваша собственная улица</legend>
+
+          <label class="check check-feature">
+            <input type="checkbox" name="ownNeighborhood" value="on" data-reveals="v-own-block">
+            <span>
+              <span class="check-title">Я хочу обойти дома в своём районе.</span>
+              <span class="check-note">Дверь открывают иначе, когда стучит человек, живущий через два дома. Если это про вас, кто-то из нас пойдёт по домам вместе с вами.</span>
+            </span>
+          </label>
+
+          <div class="conditional" id="v-own-block">
+            <div class="field">
+              <label for="v-address">Ваш адрес</label>
+              <span class="field-hint">Чтобы понимать, какие улицы за вами закрепить и где встретиться. Мы не публикуем его и не передаём никому за пределами кампании.</span>
+              <input type="text" id="v-address" name="address" autocomplete="street-address" data-required-when-shown placeholder="Адрес, Shakopee MN">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="field-group">
           <legend>Смены</legend>
 
           <div class="shift-grid">
@@ -183,26 +203,6 @@
           <div class="field">
             <label for="v-other-times">Что-то ещё, что нам стоит знать о вашем расписании?</label>
             <input type="text" id="v-other-times" name="otherTimes" placeholder="напр. каждую вторую субботу или будни утром">
-          </div>
-        </fieldset>
-
-        <fieldset class="field-group">
-          <legend>Ваша собственная улица</legend>
-
-          <label class="check check-feature">
-            <input type="checkbox" name="ownNeighborhood" value="on" data-reveals="v-own-block">
-            <span>
-              <span class="check-title">Я хочу обойти дома в своём районе.</span>
-              <span class="check-note">Дверь открывают иначе, когда стучит человек, живущий через два дома. Если это про вас, кто-то из нас пойдёт по домам вместе с вами.</span>
-            </span>
-          </label>
-
-          <div class="conditional" id="v-own-block">
-            <div class="field">
-              <label for="v-address">Ваш адрес</label>
-              <span class="field-hint">Чтобы понимать, какие улицы за вами закрепить и где встретиться. Мы не публикуем его и не передаём никому за пределами кампании.</span>
-              <input type="text" id="v-address" name="address" autocomplete="street-address" data-required-when-shown placeholder="Адрес, Shakopee MN">
-            </div>
           </div>
         </fieldset>
 

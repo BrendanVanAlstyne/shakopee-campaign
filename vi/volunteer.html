@@ -127,6 +127,26 @@
         </fieldset>
 
         <fieldset class="field-group">
+          <legend>Con phố của chính quý vị</legend>
+
+          <label class="check check-feature">
+            <input type="checkbox" name="ownNeighborhood" value="on" data-reveals="v-own-block">
+            <span>
+              <span class="check-title">Tôi muốn đi gõ cửa ngay trong khu phố của mình.</span>
+              <span class="check-note">Cánh cửa mở ra khác hẳn khi người gõ cửa sống cách đó hai căn nhà. Nếu đây là quý vị, một trong hai chúng tôi sẽ đi cùng.</span>
+            </span>
+          </label>
+
+          <div class="conditional" id="v-own-block">
+            <div class="field">
+              <label for="v-address">Địa chỉ của quý vị</label>
+              <span class="field-hint">Để chúng tôi biết chia khu vực nào cho quý vị và hẹn gặp ở đâu. Chúng tôi không công bố và không chia sẻ ra ngoài chiến dịch.</span>
+              <input type="text" id="v-address" name="address" autocomplete="street-address" data-required-when-shown placeholder="Địa chỉ, Shakopee MN">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="field-group">
           <legend>Ca trực</legend>
 
           <div class="shift-grid">
@@ -183,26 +203,6 @@
           <div class="field">
             <label for="v-other-times">Còn điều gì khác về lịch rảnh của quý vị không?</label>
             <input type="text" id="v-other-times" name="otherTimes" placeholder="ví dụ: cách tuần vào Thứ Bảy, hoặc sáng các ngày trong tuần">
-          </div>
-        </fieldset>
-
-        <fieldset class="field-group">
-          <legend>Con phố của chính quý vị</legend>
-
-          <label class="check check-feature">
-            <input type="checkbox" name="ownNeighborhood" value="on" data-reveals="v-own-block">
-            <span>
-              <span class="check-title">Tôi muốn đi gõ cửa ngay trong khu phố của mình.</span>
-              <span class="check-note">Cánh cửa mở ra khác hẳn khi người gõ cửa sống cách đó hai căn nhà. Nếu đây là quý vị, một trong hai chúng tôi sẽ đi cùng.</span>
-            </span>
-          </label>
-
-          <div class="conditional" id="v-own-block">
-            <div class="field">
-              <label for="v-address">Địa chỉ của quý vị</label>
-              <span class="field-hint">Để chúng tôi biết chia khu vực nào cho quý vị và hẹn gặp ở đâu. Chúng tôi không công bố và không chia sẻ ra ngoài chiến dịch.</span>
-              <input type="text" id="v-address" name="address" autocomplete="street-address" data-required-when-shown placeholder="Địa chỉ, Shakopee MN">
-            </div>
           </div>
         </fieldset>
 
