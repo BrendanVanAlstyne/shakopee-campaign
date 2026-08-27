@@ -703,6 +703,16 @@ section { padding: 3rem 0; }
 
 .btn:hover { background: var(--gold-soft); }
 
+/* Standalone call to action on the landing page, under the candidate
+   cards. index.html loads style.v5.css only, so it cannot use .cta-row
+   from forms.v2.css the way ali.html and brendan.html do. */
+.home-cta {
+  margin: 0 0 2.5rem;
+  text-align: center;
+}
+
+.home-cta .btn { margin-top: 0; }
+
 /* ---------- Share Your Story: contact options + steps ---------- */
 
 .contact-options {
