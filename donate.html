@@ -7,6 +7,13 @@
 <meta name="description" content="Support the Verney &amp; Van Alstyne campaign for Shakopee City Council. No corporate money, no big donors.">
 <link rel="stylesheet" href="css/style.v5.css">
 <link rel="stylesheet" href="css/forms.v2.css">
+<link rel="alternate" hreflang="en" href="https://alivforshakopee.org/donate.html">
+<link rel="alternate" hreflang="es" href="https://alivforshakopee.org/es/donate.html">
+<link rel="alternate" hreflang="fr" href="https://alivforshakopee.org/fr/donate.html">
+<link rel="alternate" hreflang="ru" href="https://alivforshakopee.org/ru/donate.html">
+<link rel="alternate" hreflang="so" href="https://alivforshakopee.org/so/donate.html">
+<link rel="alternate" hreflang="vi" href="https://alivforshakopee.org/vi/donate.html">
+<link rel="alternate" hreflang="x-default" href="https://alivforshakopee.org/donate.html">
 <link rel="canonical" href="https://alivforshakopee.org/donate.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Verney &amp; Van Alstyne for Shakopee City Council">
@@ -19,7 +26,7 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Donate — Ali Verney &amp; Brendan Van Alstyne for Shakopee City Council">
-<meta name="twitter:description" content="Support the Verney &amp; Van Alstyne campaign for Shakopee City Council.">
+<meta name="twitter:description" content="Support the Verney &amp; Van Alstyne campaign for Shakopee City Council. No corporate money, no big donors.">
 <meta name="twitter:image" content="https://alivforshakopee.org/img/og-card.jpg">
 </head>
 <body>
@@ -41,17 +48,13 @@
         <a href="index.html#share">Share Your Story</a>
         <a href="index.html#vote">How to Vote</a>
       </nav>
-      <!-- Language switcher points at each locale's bio-page donate section
-           until the translated donate.html pages exist. Do NOT point it at
-           es/donate.html etc. before those files ship: Cloudflare caches a 404
-           for four hours, so a link that lands early poisons the path. -->
       <div class="lang-switch" aria-label="Language">
         <a href="donate.html" class="lang-current">English</a>
-        <a href="es/brendan.html#donate">Español</a>
-        <a href="so/brendan.html#donate">Soomaali</a>
-        <a href="vi/brendan.html#donate">Tiếng Việt</a>
-        <a href="ru/brendan.html#donate">Русский</a>
-        <a href="fr/brendan.html#donate">Français</a>
+        <a href="es/donate.html">Español</a>
+        <a href="so/donate.html">Soomaali</a>
+        <a href="vi/donate.html">Tiếng Việt</a>
+        <a href="ru/donate.html">Русский</a>
+        <a href="fr/donate.html">Français</a>
       </div>
     </div>
   </div>
@@ -64,9 +67,7 @@
       <svg class="star" style="width:56px;height:56px;margin:0 auto 0.75rem;display:block" viewBox="0 0 200 200" aria-hidden="true"><polygon fill="#f5b932" points="100,0 119.5,59.4 178.2,37.7 143.9,90 197.5,122.3 135.2,128.1 143.4,190.1 100,145 56.6,190.1 64.8,128.1 2.5,122.3 56.1,90 21.8,37.7 80.5,59.4"/></svg>
       <h1>Support the Campaign</h1>
       <p class="lede">
-        No corporate money and no big donors &mdash; this campaign runs on
-        neighbors chipping in what they can, and every dollar stays right here
-        in Shakopee.
+        No corporate money and no big donors &mdash; this campaign runs on neighbors chipping in what they can, and every dollar stays right here in Shakopee.
       </p>
     </div>
   </div>
@@ -74,50 +75,32 @@
   <section>
     <div class="wrap">
 
-      <!-- Revealed by js/forms.v1.js when the submission succeeds. The PayPal
-           handoff lives in here rather than out on the page so the normal path
-           captures the employer first. -->
+      <!-- Revealed by js/forms.v1.js on success. The PayPal handoff lives in
+           here rather than out on the page, so the normal path records the
+           donor's details before anyone reaches checkout. -->
       <div class="form-status status-ok" id="form-success" role="status" tabindex="-1" hidden>
         <h2>Thank you &mdash; one more step.</h2>
-        <p>
-          We have what Minnesota requires us to report. Now finish your
-          donation with PayPal:
-        </p>
+        <p>We have what Minnesota requires us to report. Now finish your donation with PayPal:</p>
         <p style="margin:1.25rem 0">
           <a class="btn" href="https://www.paypal.com/donate/?hosted_button_id=AQT4DAFUX3UTL">Continue to PayPal</a>
         </p>
-        <p class="vote-tool-note">
-          No PayPal account needed &mdash; any debit or credit card works.
-          Please give under the same name you just entered, so we can match
-          your gift to what you told us.
-        </p>
+        <p class="vote-tool-note">No PayPal account needed &mdash; any debit or credit card works. Please give under the same name you just entered, so we can match your gift to what you told us.</p>
+        <p class="vote-tool-note donate-fee-note">PayPal takes about 3% plus 49&cent; out of every gift. If you’re able, please consider covering that at checkout so your whole donation reaches the campaign.</p>
       </div>
 
       <div class="form-status status-error" id="form-error" role="alert" tabindex="-1" hidden>
         <h2>That didn't go through.</h2>
-        <p>Something on our end failed, and we'd rather you didn't lose the donation over it. Please email <!--email_off--><a href="mailto:brendanvanalstyne@gmail.com?subject=Donation">brendanvanalstyne@gmail.com</a><!--/email_off--> or call or text <a href="tel:+17632003711">(763) 200-3711</a> and we'll sort it out.</p>
+        <p>Something on our end failed, and we would rather you did not lose the donation over it. Please email <!--email_off--><a href="mailto:brendanvanalstyne@gmail.com?subject=Donation">brendanvanalstyne@gmail.com</a><!--/email_off--> or call or text <a href="tel:+17632003711">(763) 200-3711</a> and we will sort it out.</p>
       </div>
 
       <div class="form-unconfigured" id="form-unconfigured" hidden>
-        <p><strong>Online giving isn't switched on yet.</strong> Checks work today: make yours payable to <strong>Brendan V for Shakopee</strong> and email <!--email_off--><a href="mailto:brendanvanalstyne@gmail.com?subject=Donation">brendanvanalstyne@gmail.com</a><!--/email_off--> or text <a href="tel:+17632003711">(763) 200-3711</a> for the mailing address. Please include your name, address, and employer with the check.</p>
+        <p><strong>Online giving is not switched on yet.</strong> Checks work today: make yours payable to <strong>Brendan V for Shakopee</strong> and email <!--email_off--><a href="mailto:brendanvanalstyne@gmail.com?subject=Donation">brendanvanalstyne@gmail.com</a><!--/email_off--> or text <a href="tel:+17632003711">(763) 200-3711</a> for the mailing address. Please include your name, address, and employer with the check.</p>
       </div>
 
       <p class="form-intro" data-form-intro>
-        Minnesota requires us to report the <strong>employer</strong> of anyone
-        whose giving passes $100 in a year &mdash; and PayPal has no way to ask
-        for it. So we ask here, first. It takes about twenty seconds, and then
-        you're straight on to checkout.
+        Minnesota requires us to report the name, address and employer of anyone whose giving passes $100 in a year. PayPal cannot ask for all of it, so we do &mdash; once, here. It takes about a minute, and then you are straight on to checkout.
       </p>
 
-      <!-- ACTIVATE: this action is the placeholder on purpose. The live
-           deployment does not know about form="donation" until Brendan
-           redeploys the Apps Script, and the OLD deployment would file a
-           donation submission into the volunteer roster. While the placeholder
-           is here, forms.v1.js hides the form and shows #form-unconfigured, so
-           nothing can be misfiled. After redeploying, point it at the same
-           /exec URL the other two forms use:
-             python apps-script/set-endpoint.py <url>
-           (add 'donate.html' to PAGES in that script first). -->
       <form class="form-card"
             data-signup-form
             method="post"
@@ -145,13 +128,38 @@
 
           <div class="field">
             <label for="d-email">Email <span class="req" aria-hidden="true">*</span></label>
-            <span class="field-hint">Only so we can reach you if something doesn't add up at filing time.</span>
+            <span class="field-hint">Only so we can reach you if something does not add up at filing time.</span>
             <input type="email" id="d-email" name="email" autocomplete="email" required>
+          </div>
+        </fieldset>
+
+        <fieldset class="field-group">
+          <legend>Your mailing address</legend>
+          <span class="field-hint">This goes on a public campaign finance report if your giving passes $100 in a year. That is state law, not our choice.</span>
+
+          <div class="field">
+            <label for="d-address">Street address <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="d-address" name="address" autocomplete="street-address" required>
+          </div>
+
+          <div class="field">
+            <label for="d-city">City <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="d-city" name="city" autocomplete="address-level2" required>
+          </div>
+
+          <div class="field">
+            <label for="d-state">State <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="d-state" name="state" autocomplete="address-level1" required>
+          </div>
+
+          <div class="field">
+            <label for="d-zip">ZIP <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="d-zip" name="zip" autocomplete="postal-code" inputmode="numeric" required>
           </div>
 
           <div class="field">
             <label for="d-employer">Employer <span class="req" aria-hidden="true">*</span></label>
-            <span class="field-hint">Or your occupation if you're self-employed, or just &ldquo;not employed&rdquo; &mdash; retired and student both count. This is the one thing the state requires that PayPal can't collect.</span>
+            <span class="field-hint">Or your occupation if you are self-employed, or just &ldquo;not employed&rdquo; &mdash; retired and student both count.</span>
             <input type="text" id="d-employer" name="employer" autocomplete="organization" required>
           </div>
         </fieldset>
@@ -186,31 +194,27 @@
         <div class="form-actions">
           <button type="submit" data-sending-label="One moment…">Continue to payment</button>
           <p class="form-privacy">
-            Your employer goes on a public campaign finance report, because
-            state law says it must. Your email doesn't &mdash; that stays with
-            the campaign, and we don't sell it, trade it, or hand it to anyone
-            else.
+            Your name, address and employer go on a public campaign finance report, because state law says they must. Your email does not &mdash; that stays with the campaign, and we do not sell it, trade it, or hand it to anyone else.
           </p>
         </div>
       </form>
 
       <details class="disclosure donate-disclosure" style="margin-top:2rem">
-        <summary><strong>The fine print &mdash; Minnesota's rules for donors</strong></summary>
+        <summary><strong>Flock cameras need to go.</strong></summary>
         <div class="disclosure-body">
           <ul class="donate-rules">
-            <li><strong>Personal funds only.</strong> Minnesota law prohibits campaign contributions from corporations and businesses &mdash; only give from a personal account, not a business one.</li>
-            <li><strong>Contribution limit.</strong> You can give up to <strong>$600 total during 2026</strong>, per person.</li>
-            <li><strong>If your total giving passes $100</strong>, state law requires the committee to report your name, address, and employer (or occupation, if self-employed) &mdash; so collecting that information is part of donating.</li>
-            <li><strong>No anonymous donations.</strong> Every contribution needs a name attached so we can report honestly.</li>
-            <li><strong>U.S. citizens and green-card holders only</strong> &mdash; federal law prohibits contributions from foreign nationals in any U.S. election, including local ones.</li>
-            <li><strong>Not tax-deductible.</strong> The state's Political Contribution Refund program covers state races only, so it does <em>not</em> apply here. Please don't count on money back.</li>
-          </ul>
+                <li><strong>Personal funds only.</strong> Minnesota law prohibits campaign contributions from corporations and businesses &mdash; only give from a personal account, not a business one.</li>
+                <li><strong>Contribution limit.</strong> You can give up to <strong>$600 total during 2026</strong>, per person.</li>
+                <li><strong>If your total giving passes $100</strong>, state law requires the committee to report your name, address, and employer (or occupation, if self-employed) &mdash; so collecting that information is part of donating.</li>
+                <li><strong>No anonymous donations.</strong> Every contribution needs a name attached so we can report honestly.</li>
+                <li><strong>U.S. citizens and green-card holders only</strong> &mdash; federal law prohibits contributions from foreign nationals in any U.S. election, including local ones.</li>
+                <li><strong>Not tax-deductible.</strong> The state's Political Contribution Refund program covers state races only, so it does <em>not</em> apply here. Please don't count on money back.</li>
+              </ul>
         </div>
       </details>
 
       <p class="form-intro" style="margin-top:2rem;text-align:center">
-        Can't give right now? <a href="volunteer.html">Volunteering</a> is worth
-        more than money in a race this size.
+        Can't give right now? <a href="volunteer.html">Volunteering</a> is worth more than money in a race this size.
       </p>
 
     </div>
