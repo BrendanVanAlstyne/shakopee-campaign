@@ -276,12 +276,19 @@ a { color: var(--royal); }
    menu links must NOT inherit the tab geometry the 1024px rule above
    gives every .site-nav a. */
 @media (min-width: 1024px) {
+  /* The <details> is the flex item that stretches to the nav's height; the
+     summary inside it does not stretch on its own and would sit 24px tall
+     at the top of a 44px slot, its label a line above the links beside it.
+     Give it the full slot plus the same 0.6rem bleed the links get. */
   .site-header .site-nav .nav-drop > summary {
+    height: calc(100% + 0.6rem);
+    box-sizing: border-box;
     margin-bottom: -0.6rem;
     padding-top: 0;
     padding-bottom: 0;
     border-radius: 6px 6px 0 0;
   }
+  .site-header .site-nav .nav-drop-menu { top: calc(100% + 0.6rem + 0.35rem); }
   .site-header .site-nav .nav-drop-menu a {
     display: block;
     margin-bottom: 0;

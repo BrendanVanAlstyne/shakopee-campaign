@@ -250,7 +250,7 @@ for loc in LOCALES:
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="stylesheet" href="{base}css/style.v6.css">
+<link rel="stylesheet" href="{base}css/style.v7.css">
 <link rel="stylesheet" href="{base}css/forms.v2.css">
 <link rel="alternate" hreflang="en" href="https://alivforshakopee.org/donate.html">
 <link rel="alternate" hreflang="es" href="https://alivforshakopee.org/es/donate.html">
