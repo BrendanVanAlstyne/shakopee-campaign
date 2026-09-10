@@ -225,6 +225,10 @@ for loc in LOCALES:
     header = block(ys, r'<header class="site-header">', '</header>')
     # Repoint the language switcher (and only it) at donate.html.
     header = header.replace('yard-sign.html', 'donate.html')
+    # The nav's Donate dropdown is lifted along with the header; on this page
+    # it is the current section, so its summary carries the active tab.
+    header = re.sub(r'(<details class="nav-drop">\s*<summary)>',
+                    r'\1 class="active">', header, count=1)
     footer = block(ys, r'<footer class="site-footer">', '</footer>')
 
     # Reuse already-live translated copy rather than retranslating it.
@@ -246,7 +250,7 @@ for loc in LOCALES:
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="stylesheet" href="{base}css/style.v5.css">
+<link rel="stylesheet" href="{base}css/style.v6.css">
 <link rel="stylesheet" href="{base}css/forms.v2.css">
 <link rel="alternate" hreflang="en" href="https://alivforshakopee.org/donate.html">
 <link rel="alternate" hreflang="es" href="https://alivforshakopee.org/es/donate.html">

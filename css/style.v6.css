@@ -195,6 +195,116 @@ a { color: var(--royal); }
   color: var(--navy);
 }
 
+/* ---------- Donate dropdown (nav) ----------
+   A <details>/<summary> pair, so it opens and closes with no JS at all and
+   is keyboard-reachable for free. Two entries: Brendan's live donate page,
+   and Ali's, which points at the "coming soon" block on her bio page until
+   her committee's PayPal button exists. Labels are markup in each page, so
+   the five translations carry their own wording. */
+.site-nav .nav-drop { position: relative; }
+
+.site-nav .nav-drop > summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: background 0.2s ease;
+}
+.site-nav .nav-drop > summary::-webkit-details-marker { display: none; }
+
+/* chevron, flips when open */
+.site-nav .nav-drop > summary::after {
+  content: "";
+  width: 0.4em;
+  height: 0.4em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-0.12em) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+.site-nav .nav-drop[open] > summary::after { transform: translateY(0.12em) rotate(225deg); }
+
+.site-nav .nav-drop > summary:hover,
+.site-nav .nav-drop[open] > summary { background: rgba(255, 255, 255, 0.12); }
+.site-nav .nav-drop > summary.active { background: rgba(255, 255, 255, 0.18); }
+
+.site-nav .nav-drop-menu {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  min-width: 16rem;
+  background: var(--navy-deep);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  padding: 0.35rem;
+  box-shadow: 0 10px 30px rgba(19, 27, 71, 0.45);
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.site-nav .nav-drop-menu a {
+  display: block;
+  padding: 0.55rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.site-nav .nav-drop-menu a.nav-drop-soon {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+.site-nav .nav-drop-menu a.nav-drop-soon:hover { color: var(--white); }
+
+/* Translated nav labels run tight (see the :lang rules above) -- the
+   summary follows the same notches so the row still fits. */
+:lang(es) .site-nav .nav-drop > summary,
+:lang(vi) .site-nav .nav-drop > summary { font-size: 0.85rem; padding: 0.45rem 0.5rem; }
+:lang(ru) .site-nav .nav-drop > summary,
+:lang(so) .site-nav .nav-drop > summary { font-size: 0.82rem; padding: 0.45rem 0.42rem; }
+
+/* Desktop: the summary is a folder tab like its sibling links, and the
+   menu links must NOT inherit the tab geometry the 1024px rule above
+   gives every .site-nav a. */
+@media (min-width: 1024px) {
+  .site-header .site-nav .nav-drop > summary {
+    margin-bottom: -0.6rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 6px 6px 0 0;
+  }
+  .site-header .site-nav .nav-drop-menu a {
+    display: block;
+    margin-bottom: 0;
+    padding: 0.55rem 0.8rem;
+    border-radius: 6px;
+  }
+}
+
+/* Phones: the nav has wrapped under the brand and the Donate item can sit
+   anywhere on its row, so a floating menu could hang off either edge.
+   Open it in-flow instead: the item takes the full row and the header
+   grows to fit. */
+@media (max-width: 640px) {
+  .site-nav .nav-drop[open] { flex-basis: 100%; }
+  .site-nav .nav-drop-menu {
+    position: static;
+    margin-top: 0.25rem;
+    min-width: 0;
+    box-shadow: none;
+  }
+  .site-nav .nav-drop-menu a { white-space: normal; }
+}
+
 /* ---------- Hero blocks ---------- */
 
 .hero {
