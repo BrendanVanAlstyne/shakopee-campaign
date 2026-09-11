@@ -108,7 +108,65 @@
   );
 
   /* ===============================================================
-   * 3. Reveal statement boxes as they scroll into view.
+   * 3. Phone header: slide away on scroll down, back on scroll up.
+   *
+   * On a phone the nav wraps under the brand and the sticky header takes
+   * a fair slice of the screen, so it steps aside while the reader moves
+   * down the page and returns the moment they scroll back up. Desktop
+   * keeps its folder-tab nav pinned; the breakpoint is the stylesheet's
+   * own "Phones" cut-off. This can never hide content: the header is only
+   * ever translated, and it is always shown near the top of the page.
+   *
+   * The two style properties are set inline rather than in the stylesheet
+   * so the behaviour ships under this file's cache key alone.
+   * ============================================================= */
+  function hideHeaderOnScroll() {
+    var header = document.querySelector('.site-header');
+    var phone = window.matchMedia ? window.matchMedia('(max-width: 640px)') : null;
+    if (!header || !phone) return;
+
+    var hidden = false;
+    var lastY = window.pageYOffset || 0;
+    var STEP = 6;   // px of travel before a direction counts; filters jitter
+
+    if (!reduceMotion) header.style.transition = 'transform 0.22s ease';
+
+    function setHidden(v) {
+      if (v === hidden) return;
+      hidden = v;
+      header.style.transform = v ? 'translateY(-100%)' : '';
+    }
+    function update() {
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      if (y < 0 || y > max) {                     // iOS rubber-band overscroll
+        lastY = Math.max(0, Math.min(y, max));
+        return;
+      }
+      if (!phone.matches || y <= header.offsetHeight) {
+        setHidden(false);
+        lastY = y;
+        return;
+      }
+      var d = y - lastY;
+      if (d > STEP) { setHidden(true); lastY = y; }
+      else if (d < -STEP) { setHidden(false); lastY = y; }
+      // Smaller moves leave lastY alone so a slow drag still adds up.
+    }
+    // No rAF throttle: browsers already dispatch scroll once per frame, and
+    // the work above is a couple of reads and one style write.
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    // Keyboard users tabbing into the nav must be able to see it.
+    header.addEventListener('focusin', function () {
+      setHidden(false);
+      lastY = window.pageYOffset || 0;
+    });
+  }
+  hideHeaderOnScroll();
+
+  /* ===============================================================
+   * 4. Reveal statement boxes as they scroll into view.
    *
    * The hidden start state lives behind .js-reveal on <html>, added only
    * below. No JS, no IntersectionObserver, a reduced-motion preference, or
